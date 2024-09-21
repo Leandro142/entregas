@@ -1,97 +1,176 @@
+/* Estilos gerais para o corpo da página */
 body {
     font-family: Arial, sans-serif;
+    background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
+    background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+    color: #ffffff; /* Cor do texto ajustada para contraste */
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    text-align: center;
+    min-height: 100vh; /* Garante que o rodapé fique no final da página */
+    display: flex;
+    flex-direction: column;
 }
 
+/* Estilo do cabeçalho */
 header {
-    background-color: #39FF14; /* Verde Fluorescente */
-    color: black;
-    padding: 20px;
-    text-align: center;
-}
-
-nav a {
-    color: black;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
-    padding: 20px;
-}
-
-.intro h2, .benefits h2 {
-    color: #39FF14;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
     color: white;
-    background-color: #39FF14;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.cta-button:hover {
-    background-color: #32e10d;
-}
-
-footer {
-    background-color: #39FF14;
-    color: black;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-.benefits, .form-section {
-    max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
-    background-color: white;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Estilos do container principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-ul {
-    list-style: disc;
-    margin: 10px 0;
+/* Estilo dos benefícios e do formulário */
+.benefits, .form-container {
+    width: 100%;
+}
+
+.benefits {
+    text-align: left;
+    color: #000000; /* Cor preta para os textos dos benefícios */
+}
+
+.benefits ul {
+    list-style-type: disc; /* Adiciona marcadores aos itens da lista */
     padding-left: 20px;
+    font-size: 1.1em;
 }
 
+.benefits li {
+    margin-bottom: 10px;
+}
+
+.copy {
+    color: #000000; /* Cor preta para a cópia persuasiva */
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-container {
+    text-align: left;
+}
+
+.form-container h3 {
+    color: #000000; /* Cor preta para o texto de instrução */
+}
+
+/* Estilo do formulário */
 form {
     display: flex;
     flex-direction: column;
 }
 
 label {
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #000000; /* Cor preta para os textos do formulário */
 }
 
-input, textarea {
-    margin-bottom: 15px;
+input, textarea, select {
+    width: 100%;
     padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    font-size: 1em;
+    background-color: #ffffff; /* Fundo branco para inputs para melhor contraste */
+    color: #333; /* Cor do texto dentro dos inputs */
 }
 
 button {
-    padding: 10px 20px;
+    background-color: #28a745;
     color: white;
-    background-color: #39FF14;
+    padding: 15px 30px;
     border: none;
     border-radius: 5px;
+    font-size: 1.2em;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #32e10d;
+    background-color: #71e29f;
+}
+
+/* Estilo do rodapé */
+footer {
+    margin-top: auto; /* Garante que o rodapé fique no final da página */
+    font-size: 0.9em;
+    color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+    padding: 10px;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-contact img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Estilos responsivos */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px;
+    }
+
+    .benefits, .form-container {
+        width: 48%;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .copy {
+        font-size: 1.1em;
+    }
+
+    .benefits ul {
+        font-size: 1em;
+    }
+
+    .form-container h3 {
+        font-size: 1.1em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
 }
