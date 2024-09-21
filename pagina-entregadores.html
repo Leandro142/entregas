@@ -12,6 +12,9 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo de fundo */
+            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
+            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
         }
 
         header {
@@ -42,8 +45,8 @@
         }
 
         .benefits ul {
-            list-style: none;
-            padding: 0;
+            list-style-type: disc; /* Adiciona marcadores aos itens da lista */
+            padding-left: 20px;
             font-size: 1.1em;
         }
 
@@ -52,7 +55,7 @@
         }
 
         img {
-            width: 200px;
+            width: 100%; /* Logo ocupa toda a largura */
             height: auto;
             margin-bottom: 20px;
         }
@@ -94,7 +97,7 @@
         footer {
             margin-top: 20px;
             font-size: 0.9em;
-            color: #777;
+            color: #1e90ff; /* Cor do texto no rodapé alterada */
         }
     </style>
 </head>
@@ -105,7 +108,6 @@
 
     <div class="container">
         <div class="benefits">
-            <img src="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true" alt="Logo Leleh Entregas">
             <h2>Benefícios de Ser um Entregador</h2>
             <ul>
                 <li>Flexibilidade de horários</li>
