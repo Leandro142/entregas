@@ -7,15 +7,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
+            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
+            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+            color: #ffffff; /* Cor do texto ajustada para contraste */
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
         header {
-            background-color: #1e90ff;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
             color: white;
             padding: 20px;
         }
@@ -26,29 +28,71 @@
         }
 
         .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
             max-width: 900px;
             margin: 30px auto;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
         }
 
-        img {
-            width: 200px;
-            height: auto;
+        .section {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+            text-align: left; /* Alinha o texto à esquerda */
+        }
+
+        .section h2 {
+            color: #000000; /* Cor preta para os títulos das seções */
+        }
+
+        .section ul {
+            list-style-type: disc; /* Adiciona marcadores */
+            color: #000000; /* Cor preta para os itens da lista */
+            font-size: 1.2em;
+            padding-left: 20px; /* Adiciona um recuo para os itens da lista */
+        }
+
+        .section p {
+            color: #000000; /* Cor preta para o texto das seções */
+            font-size: 1.2em;
+        }
+
+        .section a {
+            color: #1e90ff; /* Cor azul para os links */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+            padding: 10px;
         }
 
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: left; /* Alinha o formulário à esquerda */
         }
 
         label {
             margin-bottom: 10px;
             font-size: 1.1em;
+            color: #000000; /* Cor preta para os rótulos */
         }
 
         input, textarea, select {
@@ -58,6 +102,7 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 1em;
+            color: #000000; /* Cor preta para o texto dos campos */
         }
 
         button {
@@ -74,12 +119,6 @@
         button:hover {
             background-color: #63b3ed;
         }
-
-        footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #777;
-        }
     </style>
 </head>
 <body>
@@ -88,32 +127,34 @@
     </header>
 
     <div class="container">
-        <img src="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true" alt="Logo Leleh Entregas">
-        <h2>Benefícios da Plataforma</h2>
-        <ul>
-            <li>Primeiro mês gratuito (pague apenas as taxas de entrega)</li>
-            <li>Taxa simbólica de R$50 mensais após o período de teste</li>
-            <li>Não precisa gastar com combustível, mochila ou manutenção de moto</li>
-            <li>Plataforma intuitiva e fácil de usar</li>
-            <li>Suporte 24 horas</li>
-        </ul>
-        <h3>Preencha o formulário abaixo para se cadastrar:</h3>
+        <div class="section">
+            <h2>Benefícios da Plataforma</h2>
+            <p>Descubra as vantagens de integrar sua empresa à nossa plataforma de entregas!</p>
+            <ul>
+                <li>Primeiro mês gratuito (pague apenas as taxas de entrega)</li>
+                <li>Taxa simbólica de R$50 mensais após o período de teste</li>
+                <li>Não precisa gastar com combustível, mochila ou manutenção de moto</li>
+                <li>Plataforma intuitiva e fácil de usar</li>
+                <li>Suporte 24 horas</li>
+            </ul>
+            <h3>Preencha o formulário abaixo para se cadastrar:</h3>
 
-        <form action="https://formspree.io/f/mpwagrnw" method="POST">
-            <label for="name">Nome do Estabelecimento:</label>
-            <input type="text" id="name" name="name" required>
+            <form action="https://formspree.io/f/xkgwlznn" method="POST">
+                <label for="name">Nome do Estabelecimento:</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="phone">Telefone:</label>
-            <input type="tel" id="phone" name="phone" required>
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
 
-            <label for="address">Endereço:</label>
-            <input type="text" id="address" name="address" required>
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" required>
 
-            <button type="submit">Cadastrar Estabelecimento</button>
-        </form>
+                <button type="submit">Cadastrar Estabelecimento</button>
+            </form>
+        </div>
     </div>
 
     <footer>
