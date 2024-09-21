@@ -93,6 +93,38 @@
             margin-top: 20px;
             text-align: center;
         }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .section {
+                width: 45%;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .section {
+                width: 90%;
+                max-width: none;
+                margin-bottom: 15px;
+            }
+
+            .section a {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
