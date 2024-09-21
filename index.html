@@ -49,46 +49,43 @@
 
         .container {
             display: flex;
-            flex-direction: row;
             justify-content: center;
-            align-items: stretch;
-            width: 80%;
+            align-items: center;
+            width: 100%;
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
             box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-            text-align: left;
         }
 
         .section {
-            width: 50%;
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para as seções */
             padding: 20px;
-            box-sizing: border-box;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
         }
 
         .section h2 {
             color: #000000; /* Cor preta para os títulos das seções */
         }
 
-        .section p {
+        .section ul {
+            list-style-type: disc; /* Adiciona marcadores à lista */
+            padding-left: 20px;
+        }
+
+        .section li {
             color: #000000; /* Cor preta para o texto das seções */
             font-size: 1em;
-            line-height: 1.5;
         }
 
-        .section ul {
-            color: #000000; /* Cor preta para os itens da lista */
-            font-size: 1em;
-            margin: 20px 0;
-            padding: 0;
-            list-style-position: inside; /* Ajusta a posição dos marcadores */
-        }
-
-        .section ul li {
-            margin-bottom: 10px;
+        .separator {
+            border-left: 2px solid #ffffff;
+            height: auto;
+            margin: 0 20px;
         }
 
         .section a {
@@ -110,20 +107,6 @@
             color: #1e90ff;
         }
 
-        .divider {
-            width: 2px;
-            background-color: #000000; /* Cor da linha divisória vertical */
-            height: 100%;
-            margin: 0 20px; /* Espaçamento horizontal da linha divisória */
-        }
-
-        .horizontal-divider {
-            width: 100%;
-            height: 2px;
-            background-color: #000000; /* Cor da linha divisória horizontal */
-            margin: 20px 0; /* Espaçamento vertical da linha divisória */
-        }
-
         footer {
             margin-top: auto; /* Garante que o rodapé fique no final da página */
             font-size: 0.9em;
@@ -132,21 +115,35 @@
             padding: 10px;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .container {
-                flex-direction: column;
-                width: 90%;
+                flex-direction: row;
+                justify-content: space-between;
             }
 
             .section {
-                width: 100%;
-                margin-bottom: 20px;
+                width: 45%;
             }
 
-            .divider {
-                width: 100%;
-                height: 2px;
-                margin: 20px 0; /* Espaçamento vertical da linha divisória */
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .section {
+                width: 90%;
+                max-width: none;
+                margin-bottom: 15px;
+            }
+
+            .section a {
+                font-size: 1em;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -193,34 +190,35 @@
             <h2>Para Estabelecimentos</h2>
             <p><strong>🚀 Transforme a forma como você entrega seus produtos!</strong></p>
             <ul>
-                <li>Sem gastos com combustível, mochila ou manutenção de moto.</li>
-                <li>Taxa mensal simbólica de R$50.</li>
-                <li>Taxas de entrega de acordo com a distância: de 0 a 2 km - R$6, de 2 a 4 km - R$8, e de 4 a 6 km - R$10.</li>
-                <li>Entre para a nossa plataforma e comece a desfrutar dos benefícios agora mesmo!</li>
+                <li>Melhorias na eficiência das suas entregas.</li>
+                <li>Redução de custos com combustível e manutenção.</li>
+                <li>Plataforma fácil de usar e intuitiva.</li>
+                <li>Taxa mensal simbólica após o período de teste.</li>
+                <li>Sem necessidade de equipamentos adicionais.</li>
             </ul>
             <a href="pagina-estabelecimentos.html">Cadastrar seu Estabelecimento</a>
         </div>
-
-        <div class="divider"></div> <!-- Linha divisória vertical -->
-
+        
+        <div class="separator"></div>
+        
         <div class="section">
             <h2>Para Motoboys</h2>
-            <p><strong>🏍️ Junte-se à nossa equipe de motoboys e ganhe com flexibilidade!</strong></p>
+            <p><strong>🚀 Junte-se a nós e seja parte de uma equipe de sucesso!</strong></p>
             <ul>
-                <li>Ganhos por entrega com base na quilometragem.</li>
-                <li>Flexibilidade total de horários.</li>
-                <li>Suporte completo ao motoboy.</li>
+                <li>Flexibilidade de horários.</li>
+                <li>Suporte dedicado ao motoboy.</li>
+                <li>Ganhos justos por entrega realizada.</li>
                 <li>Plataforma simples e intuitiva.</li>
-                <li>Receba diretamente pelo painel de entregas!</li>
+                <li>Pagamentos semanais e transparentes.</li>
             </ul>
             <a href="pagina-motoboys.html">Cadastrar como Motoboy</a>
         </div>
     </div>
 
-    <div class="horizontal-divider"></div> <!-- Linha divisória horizontal -->
-
     <footer>
+        <p>Entre em contato conosco pelo WhatsApp: <a href="https://wa.me/5561999512992" target="_blank" style="color: #ffffff;">+55 61 99951-2992</a></p>
         <p>&copy; 2024 oLeleh Entregas.</p>
     </footer>
 </body>
 </html>
+
