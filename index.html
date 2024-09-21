@@ -52,7 +52,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: stretch;
-            width: 100%;
+            width: 80%;
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
@@ -60,13 +60,13 @@
             background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
         }
 
         .section {
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
-            text-align: left;
         }
 
         .section h2 {
@@ -76,6 +76,19 @@
         .section p {
             color: #000000; /* Cor preta para o texto das seções */
             font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .section ul {
+            color: #000000; /* Cor preta para os itens da lista */
+            font-size: 1em;
+            margin: 20px 0;
+            padding: 0;
+            list-style-position: inside; /* Ajusta a posição dos marcadores */
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
         }
 
         .section a {
@@ -99,9 +112,16 @@
 
         .divider {
             width: 2px;
-            background-color: #000000; /* Cor da linha divisória */
+            background-color: #000000; /* Cor da linha divisória vertical */
             height: 100%;
             margin: 0 20px; /* Espaçamento horizontal da linha divisória */
+        }
+
+        .horizontal-divider {
+            width: 100%;
+            height: 2px;
+            background-color: #000000; /* Cor da linha divisória horizontal */
+            margin: 20px 0; /* Espaçamento vertical da linha divisória */
         }
 
         footer {
@@ -115,6 +135,7 @@
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
+                width: 90%;
             }
 
             .section {
@@ -171,7 +192,12 @@
         <div class="section">
             <h2>Para Estabelecimentos</h2>
             <p><strong>🚀 Transforme a forma como você entrega seus produtos!</strong></p>
-            <p>Estamos oferecendo uma oportunidade única para estabelecimentos em Planaltina-DF. Nossa plataforma de entregas vai revolucionar a forma como você realiza suas entregas, com um sistema fácil de usar e uma taxa mensal simbólica. No primeiro mês, você pagará apenas as taxas de entrega. Após o período de teste, a taxa mensal será de R$50, e as taxas de entrega permanecerão. Sem mais gastos com combustível, mochila ou manutenção de moto. <strong>Entre para a nossa plataforma e comece a desfrutar dos benefícios agora mesmo!</strong> 💼📦</p>
+            <ul>
+                <li>Sem gastos com combustível, mochila ou manutenção de moto.</li>
+                <li>Taxa mensal simbólica de R$50.</li>
+                <li>Taxas de entrega de acordo com a distância: de 0 a 2 km - R$6, de 2 a 4 km - R$8, e de 4 a 6 km - R$10.</li>
+                <li>Entre para a nossa plataforma e comece a desfrutar dos benefícios agora mesmo!</li>
+            </ul>
             <a href="pagina-estabelecimentos.html">Cadastrar seu Estabelecimento</a>
         </div>
 
@@ -179,11 +205,19 @@
 
         <div class="section">
             <h2>Para Motoboys</h2>
-            <p><strong>🚀 Junte-se a nós e seja parte de uma equipe de sucesso!</strong></p>
-            <p>Se você é um motoboy em Planaltina-DF e está procurando uma oportunidade de trabalho flexível com ganhos atrativos, a oLeleh Entregas é para você! Oferecemos suporte completo, flexibilidade de horários e uma plataforma intuitiva para você gerenciar suas entregas. Cadastre-se agora e faça parte da nossa equipe!</p>
+            <p><strong>🏍️ Junte-se à nossa equipe de motoboys e ganhe com flexibilidade!</strong></p>
+            <ul>
+                <li>Ganhos por entrega com base na quilometragem.</li>
+                <li>Flexibilidade total de horários.</li>
+                <li>Suporte completo ao motoboy.</li>
+                <li>Plataforma simples e intuitiva.</li>
+                <li>Receba diretamente pelo painel de entregas!</li>
+            </ul>
             <a href="pagina-motoboys.html">Cadastrar como Motoboy</a>
         </div>
     </div>
+
+    <div class="horizontal-divider"></div> <!-- Linha divisória horizontal -->
 
     <footer>
         <p>&copy; 2024 oLeleh Entregas.</p>
