@@ -7,113 +7,144 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000000; /* Fundo preto para contrastar com as cores */
+            background-color: #28a745; /* Cor do fundo igual à cor da logo */
+            color: #333;
             margin: 0;
             padding: 0;
-            color: #FFFFFF; /* Texto branco para boa legibilidade */
-        }
-        header {
             text-align: center;
-            padding: 20px;
-            background-color: #32CD32; /* Verde fluorescente da logo */
-            color: #000000; /* Texto preto para contraste */
         }
-        header img {
-            width: 150px;
-            height: auto;
-        }
-        main {
+
+        header {
+            background-color: #ffffff;
+            color: #333;
             padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #32CD32; /* Fundo da área principal em verde fluorescente */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #000000; /* Texto preto */
         }
-        label {
-            font-weight: bold;
-            color: #FFFFFF; /* Texto dos rótulos branco */
+
+        .benefits, .form-container {
+            width: 48%;
         }
+
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1em;
+        }
+
+        .benefits li {
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
         form {
             display: flex;
             flex-direction: column;
         }
-        input, select, textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 4px;
-            border: 1px solid #FFFFFF; /* Bordas brancas para contraste */
-            background-color: #000000; /* Fundo preto */
-            color: #FFFFFF; /* Texto branco */
-        }
-        button {
-            padding: 15px;
-            background-color: #FF8C00; /* Botão laranja da logo */
-            color: #000000; /* Texto preto no botão */
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        button:hover {
-            background-color: #FFA500; /* Laranja mais claro no hover */
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            background-color: #FF8C00; /* Fundo dos benefícios laranja */
+
+        label {
             margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        input, textarea, select {
+            width: 100%;
             padding: 10px;
-            border-radius: 4px;
-            color: #000000; /* Texto preto */
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #71e29f;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true" alt="Logo Leleh Entregas">
         <h1>Cadastro de Entregadores</h1>
-        <p>Junte-se à nossa equipe de entregadores e comece a lucrar com suas entregas!</p>
     </header>
-    <main>
-        <h2>Benefícios para Entregadores</h2>
-        <ul>
-            <li>Ganhe por entrega, com pagamentos rápidos.</li>
-            <li>Trabalhe no seu próprio horário.</li>
-            <li>Sem custos iniciais, você só precisa de uma moto e habilitação.</li>
-            <li>Suporte dedicado para entregadores.</li>
-        </ul>
-        <p>Preencha o formulário abaixo para se cadastrar:</p>
 
-        <!-- Formulário de cadastro -->
-        <form action="https://formspree.io/f/mpwagrnw" method="POST">
-            <label>Seu nome:
-                <input type="text" name="nome" required>
-            </label>
-            <label>Seu email:
-                <input type="email" name="email" required>
-            </label>
-            <label>Seu telefone:
-                <input type="tel" name="telefone" required>
-            </label>
-            <label>Tem habilitação?
+    <div class="container">
+        <div class="benefits">
+            <img src="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true" alt="Logo Leleh Entregas">
+            <h2>Benefícios de Ser um Entregador</h2>
+            <ul>
+                <li>Flexibilidade de horários</li>
+                <li>Suporte ao entregador</li>
+                <li>Ganhos por entrega realizados</li>
+                <li>Plataforma simples e intuitiva</li>
+            </ul>
+        </div>
+        <div class="form-container">
+            <h3>Preencha o formulário abaixo para se cadastrar:</h3>
+            <form action="https://formspree.io/f/mpwagrnw" method="POST">
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label>Possui habilitação?</label>
                 <select name="habilitacao" required>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
                 </select>
-            </label>
-            <label>Tem bag de entregador?
+
+                <label>Possui bag de entregador?</label>
                 <select name="bag" required>
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
                 </select>
-            </label>
-            <button type="submit">Enviar Cadastro</button>
-        </form>
-    </main>
+
+                <button type="submit">Cadastrar Entregador</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 oLeleh Entregas.</p>
+    </footer>
 </body>
 </html>
