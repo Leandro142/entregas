@@ -3,153 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Estabelecimentos - Plataforma de Entregas</title>
+    <title>Cadastro de Estabelecimentos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f5f5f5;
+            color: #333;
             margin: 0;
             padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin-top: 30px;
+            text-align: center;
         }
 
         header {
-            text-align: center;
-            padding: 10px;
-        }
-
-        header img {
-            width: 150px;
-            margin-bottom: 20px;
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
         }
 
         h1 {
-            color: #2e8b57;
+            font-size: 2.5em;
+            margin: 0;
         }
 
-        .benefits {
-            margin-top: 20px;
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
-        .benefits ul {
-            list-style-type: none;
-            padding: 0;
+        img {
+            width: 200px;
+            height: auto;
         }
 
-        .benefits li {
-            background-color: #2e8b57;
-            color: #fff;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-        }
-
-        .form-container {
-            margin-top: 30px;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
 
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 10px;
-            margin-top: 5px;
+            margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
+            font-size: 1em;
         }
 
         button {
-            background-color: #2e8b57;
+            background-color: #1e90ff;
             color: white;
-            padding: 15px;
+            padding: 15px 30px;
             border: none;
             border-radius: 5px;
-            margin-top: 20px;
+            font-size: 1.2em;
             cursor: pointer;
-            font-size: 16px;
-            width: 100%;
+            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #276746;
+            background-color: #63b3ed;
         }
 
         footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        footer p {
-            font-size: 14px;
-            color: #aaa;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Cadastro de Estabelecimentos</h1>
+    </header>
+
     <div class="container">
-        <header>
-            <!-- Logo -->
-            <img src="https://raw.githubusercontent.com/username/yourrepo/main/LogoPng1040x1040entregador.png" alt="Logo Leleh Entregas">
-            <h1>Cadastro de Estabelecimentos</h1>
-            <p>Faça parte da nossa plataforma de entregas e aproveite o primeiro mês totalmente grátis!</p>
-        </header>
+        <img src="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true" alt="Logo Leleh Entregas">
+        <h2>Benefícios da Plataforma</h2>
+        <ul>
+            <li>Primeiro mês gratuito (pague apenas as taxas de entrega)</li>
+            <li>Taxa simbólica de R$50 mensais após o período de teste</li>
+            <li>Não precisa gastar com combustível, mochila ou manutenção de moto</li>
+            <li>Plataforma intuitiva e fácil de usar</li>
+            <li>Suporte 24 horas</li>
+        </ul>
+        <h3>Preencha o formulário abaixo para se cadastrar:</h3>
 
-        <!-- Benefícios para os Estabelecimentos -->
-        <div class="benefits">
-            <h2>Benefícios da Nossa Plataforma</h2>
-            <ul>
-                <li>Primeiro mês totalmente grátis, pagando apenas as taxas de entrega.</li>
-                <li>Taxa simbólica de apenas R$50 mensais após o período de teste.</li>
-                <li>Você não precisa se preocupar com gasolina, mochila ou manutenção de moto.</li>
-                <li>Sistema fácil de usar e acessível diretamente do seu computador ou celular.</li>
-                <li>Repasse as taxas de entrega diretamente para os clientes, reduzindo seus custos operacionais.</li>
-                <li>Gestão de pedidos rápida e eficiente, tudo em uma única plataforma.</li>
-            </ul>
-        </div>
+        <form action="https://formspree.io/f/mpwagrnw" method="POST">
+            <label for="name">Nome do Estabelecimento:</label>
+            <input type="text" id="name" name="name" required>
 
-        <!-- Formulário de Cadastro -->
-        <div class="form-container">
-            <h2>Cadastre seu Estabelecimento</h2>
-            <form
-              action="https://formspree.io/f/mpwagrnw"
-              method="POST"
-            >
-                <label for="name">Nome do Estabelecimento:</label>
-                <input type="text" id="name" name="name" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone" required>
 
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <label for="address">Endereço:</label>
+            <input type="text" id="address" name="address" required>
 
-                <label for="company">Endereço do Estabelecimento:</label>
-                <input type="text" id="company" name="company" required>
-
-                <label for="message">Mensagem (opcional):</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-
-                <button type="submit">Cadastrar Estabelecimento</button>
-            </form>
-        </div>
-
-        <!-- Rodapé -->
-        <footer>
-            <p>&copy; 2024 oLeleh Entregas</p>
-        </footer>
+            <button type="submit">Cadastrar Estabelecimento</button>
+        </form>
     </div>
+
+    <footer>
+        <p>© 2024 oLeleh Entregas.</p>
+    </footer>
 </body>
 </html>
