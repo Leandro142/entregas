@@ -3,105 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial - Plataforma de Entregas</title>
+    <title>Home - oLeleh Entregas</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
+            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
+            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+            color: #ffffff; /* Cor do texto ajustada para contraste */
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
+            text-align: center;
         }
+
         header {
-            background-color: #39FF14;
-            color: black;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
+            color: white;
             padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            font-weight: bold;
-        }
-        nav {
-            margin-top: 15px;
-        }
-        nav a {
-            margin: 0 20px;
-            color: black;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #32e10d;
-        }
-        .main-content {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .main-content h2 {
+
+        h1 {
             font-size: 2.5em;
-            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        img {
+            width: 100%; /* Logo ocupa toda a largura */
+            height: auto;
             margin-bottom: 20px;
         }
-        .main-content p {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            color: white;
-            background-color: #39FF14;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #32e10d;
-            transform: scale(1.05);
-        }
-        footer {
-            background-color: #39FF14;
-            color: black;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
+
+        .section {
             width: 100%;
-            bottom: 0;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #000000; /* Cor preta para os títulos das seções */
+        }
+
+        .section p {
+            color: #000000; /* Cor preta para o texto das seções */
+            font-size: 1.2em;
+        }
+
+        .section a {
+            color: #1e90ff; /* Cor azul para os links */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Plataforma de Entregas</h1>
-        <nav>
-            <a href="pagina-estabelecimentos.html">Estabelecimentos</a>
-            <a href="pagina-entregadores.html">Entregadores</a>
-        </nav>
+        <h1>Bem-vindo à Leleh Entregas</h1>
     </header>
-    <div class="main-content">
-        <h2>Bem-vindo à Nossa Plataforma!</h2>
-        <p>Conectamos estabelecimentos a entregadores de forma eficiente e econômica. Explore as oportunidades e descubra como podemos ajudar você a crescer!</p>
-        <div class="button-container">
-            <a href="pagina-estabelecimentos.html" class="cta-button">Saiba Mais para Estabelecimentos</a>
-            <a href="pagina-entregadores.html" class="cta-button">Saiba Mais para Entregadores</a>
+
+    <div class="container">
+        <img src="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true" alt="Logo Leleh Entregas">
+
+        <div class="section">
+            <h2>Seja um Motoboy</h2>
+            <p>Junte-se à nossa equipe de motoboys e aproveite todos os benefícios exclusivos!</p>
+            <a href="pagina-motoboys.html">Clique aqui para se cadastrar como Motoboy</a>
+        </div>
+
+        <div class="section">
+            <h2>Cadastre seu Estabelecimento</h2>
+            <p>Faça parte da nossa rede e facilite suas entregas com a nossa plataforma.</p>
+            <a href="pagina-estabelecimentos.html">Clique aqui para cadastrar seu Estabelecimento</a>
         </div>
     </div>
+
     <footer>
-        <p>© 2024 Plataforma de Entregas. Todos os direitos reservados.</p>
+        <p>© 2024 oLeleh Entregas.</p>
     </footer>
 </body>
 </html>
