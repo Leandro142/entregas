@@ -29,8 +29,9 @@
 
         .container {
             display: flex;
-            justify-content: space-between;
-            width: 100%;
+            flex-direction: column; /* Coloca os itens em coluna para dispositivos móveis */
+            justify-content: center;
+            width: 90%;
             max-width: 1200px;
             margin: 30px auto;
             background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
@@ -40,7 +41,8 @@
         }
 
         .benefits, .form-container {
-            width: 48%;
+            width: 100%; /* Ajusta a largura para 100% em dispositivos móveis */
+            margin-bottom: 20px; /* Adiciona margem inferior em dispositivos móveis */
         }
 
         .benefits {
@@ -151,6 +153,21 @@
             width: 24px;
             height: 24px;
             margin-right: 10px;
+        }
+
+        /* Adiciona regras responsivas para diferentes tamanhos de tela */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Ajusta a direção do flex para linha em telas maiores */
+            }
+
+            .benefits, .form-container {
+                width: 48%; /* Define a largura das seções para 48% em telas maiores */
+            }
+
+            .form-container {
+                margin-left: 2%;
+            }
         }
     </style>
 </head>
