@@ -14,6 +14,9 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            min-height: 100vh; /* Garante que o rodapé fique no final da página */
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -29,33 +32,24 @@
 
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
             width: 100%;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 30px auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
         }
 
         .section {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px 0;
-            text-align: left; /* Alinha o texto à esquerda */
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para as seções */
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            text-align: left;
         }
 
         .section h2 {
             color: #000000; /* Cor preta para os títulos das seções */
-        }
-
-        .section ul {
-            list-style-type: disc; /* Adiciona marcadores */
-            color: #000000; /* Cor preta para os itens da lista */
-            font-size: 1.2em;
-            padding-left: 20px; /* Adiciona um recuo para os itens da lista */
         }
 
         .section p {
@@ -64,35 +58,33 @@
         }
 
         .section a {
+            display: inline-block;
+            background-color: #ffffff;
             color: #1e90ff; /* Cor azul para os links */
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
         }
 
         .section a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
-            padding: 10px;
+            background-color: #f0f0f0;
+            color: #1e90ff;
         }
 
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: left; /* Alinha o formulário à esquerda */
         }
 
         label {
             margin-bottom: 10px;
             font-size: 1.1em;
-            color: #000000; /* Cor preta para os rótulos */
+            color: #000000; /* Cor preta para labels */
         }
 
         input, textarea, select {
@@ -102,7 +94,6 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 1em;
-            color: #000000; /* Cor preta para o texto dos campos */
         }
 
         button {
@@ -119,6 +110,19 @@
         button:hover {
             background-color: #63b3ed;
         }
+
+        footer {
+            margin-top: auto; /* Garante que o rodapé fique no final da página */
+            font-size: 0.9em;
+            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+            padding: 10px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -129,17 +133,12 @@
     <div class="container">
         <div class="section">
             <h2>Benefícios da Plataforma</h2>
-            <p>Descubra as vantagens de integrar sua empresa à nossa plataforma de entregas!</p>
-            <ul>
-                <li>Primeiro mês gratuito (pague apenas as taxas de entrega)</li>
-                <li>Taxa simbólica de R$50 mensais após o período de teste</li>
-                <li>Não precisa gastar com combustível, mochila ou manutenção de moto</li>
-                <li>Plataforma intuitiva e fácil de usar</li>
-                <li>Suporte 24 horas</li>
-            </ul>
-            <h3>Preencha o formulário abaixo para se cadastrar:</h3>
+            <p><strong>🚀 Otimize suas entregas com nossa plataforma inovadora!</strong></p>
+            <p>Oferecemos a você, estabelecimento em Planaltina-DF, a chance de modernizar suas entregas sem custo inicial! Aproveite o primeiro mês grátis, pagando apenas pelas taxas de entrega. Após o período de teste, uma taxa mensal simbólica de R$50 é cobrada. Com nossa plataforma, você elimina os gastos com combustível, mochila e manutenção de moto, enquanto desfruta de um sistema fácil e intuitivo. Não perca esta oportunidade de transformar seu negócio e economizar! 💼📦</p>
+        </div>
 
-            <form action="https://formspree.io/f/xkgwlznn" method="POST">
+        <div class="section">
+            <form action="https://formspree.io/f/mpwagrnw" method="POST">
                 <label for="name">Nome do Estabelecimento:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -154,6 +153,10 @@
 
                 <button type="submit">Cadastrar Estabelecimento</button>
             </form>
+
+            <div class="contact-info">
+                <p>📞 Para mais informações, entre em contato diretamente pelo número: <strong>+55 61 99951-2992</strong></p>
+            </div>
         </div>
     </div>
 
