@@ -49,9 +49,9 @@
 
         .container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
-            align-items: center;
+            align-items: stretch;
             width: 100%;
             max-width: 1200px;
             margin: 30px auto;
@@ -63,11 +63,9 @@
         }
 
         .section {
-            width: 100%;
-            max-width: 500px;
+            width: 50%;
             padding: 20px;
             box-sizing: border-box;
-            margin-bottom: 20px;
             text-align: left;
         }
 
@@ -100,11 +98,10 @@
         }
 
         .divider {
-            width: 80%;
-            max-width: 600px;
-            height: 2px;
+            width: 2px;
             background-color: #000000; /* Cor da linha divisória */
-            margin: 20px auto;
+            height: 100%;
+            margin: 0 20px; /* Espaçamento horizontal da linha divisória */
         }
 
         footer {
@@ -115,35 +112,20 @@
             padding: 10px;
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .container {
-                flex-direction: row;
-                justify-content: space-around;
+                flex-direction: column;
             }
 
             .section {
-                width: 45%;
+                width: 100%;
+                margin-bottom: 20px;
             }
 
-            h1 {
-                font-size: 2.5em;
-            }
-        }
-
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .section {
-                width: 90%;
-                max-width: none;
-                margin-bottom: 15px;
-            }
-
-            .section a {
-                font-size: 1em;
-                padding: 10px 20px;
+            .divider {
+                width: 100%;
+                height: 2px;
+                margin: 20px 0; /* Espaçamento vertical da linha divisória */
             }
         }
     </style>
@@ -193,7 +175,7 @@
             <a href="pagina-estabelecimentos.html">Cadastrar seu Estabelecimento</a>
         </div>
 
-        <div class="divider"></div> <!-- Linha divisória -->
+        <div class="divider"></div> <!-- Linha divisória vertical -->
 
         <div class="section">
             <h2>Para Motoboys</h2>
