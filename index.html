@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - oLeleh Entregas</title>
+    <title>oLeleh Entregas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,28 +29,19 @@
 
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
             width: 100%;
             max-width: 1200px;
             margin: 30px auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-
-        img {
-            width: 100%; /* Logo ocupa toda a largura */
-            height: auto;
-            margin-bottom: 20px;
         }
 
         .section {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px 0;
-            text-align: center;
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para as seções */
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
         }
 
         .section h2 {
@@ -84,22 +75,21 @@
 </head>
 <body>
     <header>
-        <h1>Bem-vindo à Leleh Entregas</h1>
+        <h1>oLeleh Entregas</h1>
     </header>
 
     <div class="container">
-        <img src="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true" alt="Logo Leleh Entregas">
-
         <div class="section">
-            <h2>Seja um Motoboy</h2>
-            <p>Junte-se à nossa equipe de motoboys e aproveite todos os benefícios exclusivos!</p>
-            <a href="pagina-motoboys.html">Clique aqui para se cadastrar como Motoboy</a>
+            <h2>Para Estabelecimentos</h2>
+            <p>Junte-se à nossa plataforma que será lançada em Planaltina-DF!</p>
+            <p>Conheça as vantagens e faça parte do nosso serviço de entregas.</p>
+            <a href="pagina-estabelecimentos.html">Cadastrar Estabelecimento</a>
         </div>
-
         <div class="section">
-            <h2>Cadastre seu Estabelecimento</h2>
-            <p>Faça parte da nossa rede e facilite suas entregas com a nossa plataforma.</p>
-            <a href="pagina-estabelecimentos.html">Clique aqui para cadastrar seu Estabelecimento</a>
+            <h2>Para Motoboys</h2>
+            <p>Estamos em busca de motoboys para se juntar ao nosso time em Planaltina-DF!</p>
+            <p>Descubra os benefícios e comece a trabalhar com a gente.</p>
+            <a href="pagina-motoboys.html">Cadastrar Motoboy</a>
         </div>
     </div>
 
