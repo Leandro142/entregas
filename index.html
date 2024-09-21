@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Plataforma de Entregas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #39FF14;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            margin: 0 20px;
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #32e10d;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .main-content h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .main-content p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            color: white;
+            background-color: #39FF14;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #32e10d;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #39FF14;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plataforma de Entregas</h1>
+        <nav>
+            <a href="pagina-estabelecimentos.html">Estabelecimentos</a>
+            <a href="pagina-entregadores.html">Entregadores</a>
+        </nav>
+    </header>
+    <div class="main-content">
+        <h2>Bem-vindo à Nossa Plataforma!</h2>
+        <p>Conectamos estabelecimentos a entregadores de forma eficiente e econômica. Explore as oportunidades e descubra como podemos ajudar você a crescer!</p>
+        <div class="button-container">
+            <a href="pagina-estabelecimentos.html" class="cta-button">Saiba Mais para Estabelecimentos</a>
+            <a href="pagina-entregadores.html" class="cta-button">Saiba Mais para Entregadores</a>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 Plataforma de Entregas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
