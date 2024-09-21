@@ -7,20 +7,16 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
-            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
-            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
-            color: #ffffff; /* Cor do texto ajustada para contraste */
+            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true');
+            background-size: cover;
+            color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
-            min-height: 100vh; /* Garante que o rodapé fique no final da página */
-            display: flex;
-            flex-direction: column;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
+            background-color: rgba(30, 144, 255, 0.8);
             color: white;
             padding: 20px;
         }
@@ -31,63 +27,51 @@
         }
 
         .container {
-            display: flex;
-            justify-content: space-between;
             width: 100%;
             max-width: 1200px;
             margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .section {
-            width: 45%;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para as seções */
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
+        .container img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .benefits {
+            width: 50%;
             text-align: left;
+            padding-right: 20px;
+            box-sizing: border-box;
         }
 
-        .section h2 {
-            color: #000000; /* Cor preta para os títulos das seções */
+        .form-section {
+            width: 50%;
+            text-align: left;
+            box-sizing: border-box;
         }
 
-        .section p {
-            color: #000000; /* Cor preta para o texto das seções */
-            font-size: 1.2em;
-        }
-
-        .section a {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #1e90ff; /* Cor azul para os links */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5em;
-            padding: 15px 30px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-            margin-top: 20px;
-        }
-
-        .section a:hover {
-            background-color: #f0f0f0;
-            color: #1e90ff;
-        }
-
-        form {
+        .form-section form {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
         }
 
-        label {
+        .form-section label {
             margin-bottom: 10px;
             font-size: 1.1em;
-            color: #000000; /* Cor preta para labels */
+            color: black;
         }
 
-        input, textarea, select {
+        .form-section input, 
+        .form-section textarea, 
+        .form-section select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -96,7 +80,7 @@
             font-size: 1em;
         }
 
-        button {
+        .form-section button {
             background-color: #1e90ff;
             color: white;
             padding: 15px 30px;
@@ -107,21 +91,41 @@
             transition: background-color 0.3s;
         }
 
-        button:hover {
+        .form-section button:hover {
             background-color: #63b3ed;
         }
 
-        footer {
-            margin-top: auto; /* Garante que o rodapé fique no final da página */
-            font-size: 0.9em;
-            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
-            padding: 10px;
+        .benefits ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: black;
         }
 
-        .contact-info {
+        .benefits h2 {
+            color: black;
+        }
+
+        .contact-link {
             margin-top: 20px;
+            font-size: 1.1em;
+            color: black;
+        }
+
+        .contact-link a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 0;
         }
     </style>
 </head>
@@ -131,13 +135,20 @@
     </header>
 
     <div class="container">
-        <div class="section">
+        <div class="benefits">
             <h2>Benefícios da Plataforma</h2>
-            <p><strong>🚀 Otimize suas entregas com nossa plataforma inovadora!</strong></p>
-            <p>Oferecemos a você, estabelecimento em Planaltina-DF, a chance de modernizar suas entregas sem custo inicial! Aproveite o primeiro mês grátis, pagando apenas pelas taxas de entrega. Após o período de teste, uma taxa mensal simbólica de R$50 é cobrada. Com nossa plataforma, você elimina os gastos com combustível, mochila e manutenção de moto, enquanto desfruta de um sistema fácil e intuitivo. Não perca esta oportunidade de transformar seu negócio e economizar! 💼📦</p>
+            <p>Descubra como nossa plataforma pode simplificar o seu trabalho e reduzir custos!</p>
+            <ul>
+                <li>Primeiro mês gratuito (pague apenas as taxas de entrega)</li>
+                <li>Taxa simbólica de R$50 mensais após o período de teste</li>
+                <li>Não precisa gastar com combustível, mochila ou manutenção de moto</li>
+                <li>Plataforma intuitiva e fácil de usar</li>
+                <li>Suporte 24 horas</li>
+            </ul>
         </div>
 
-        <div class="section">
+        <div class="form-section">
+            <h3>Preencha o formulário abaixo para se cadastrar:</h3>
             <form action="https://formspree.io/f/mpwagrnw" method="POST">
                 <label for="name">Nome do Estabelecimento:</label>
                 <input type="text" id="name" name="name" required>
@@ -154,14 +165,14 @@
                 <button type="submit">Cadastrar Estabelecimento</button>
             </form>
 
-            <div class="contact-info">
-                <p>📞 Para mais informações, entre em contato diretamente pelo número: <strong>+55 61 99951-2992</strong></p>
+            <div class="contact-link">
+                <p>Precisa de ajuda? Entre em contato pelo <a href="https://wa.me/5561999512992" target="_blank">WhatsApp</a> e receba mais informações!</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2024 oLeleh Entregas.</p>
+        <p>© 2024 oLeleh Entregas - Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
