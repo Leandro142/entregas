@@ -26,25 +26,30 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 0;
         }
 
         .container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .section {
-            width: 45%;
+            width: 100%;
+            max-width: 500px;
             background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para as seções */
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
+            margin-bottom: 20px;
             text-align: left;
         }
 
@@ -54,7 +59,7 @@
 
         .section p {
             color: #000000; /* Cor preta para o texto das seções */
-            font-size: 1.2em;
+            font-size: 1em;
         }
 
         .section a {
@@ -63,11 +68,12 @@
             color: #1e90ff; /* Cor azul para os links */
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.5em;
+            font-size: 1.2em;
             padding: 15px 30px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             margin-top: 20px;
+            text-align: center;
         }
 
         .section a:hover {
