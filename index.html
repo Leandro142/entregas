@@ -27,7 +27,7 @@
             background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
             background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
             background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
-            color: #ffffff; /* Cor do texto ajustada para contraste */
+            color: #000000; /* Cor do texto ajustada para contraste */
             margin: 0;
             padding: 0;
             text-align: center;
@@ -49,6 +49,7 @@
 
         .container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 100%;
@@ -58,13 +59,21 @@
             box-sizing: border-box;
         }
 
+        .section-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
         .section {
             width: 45%;
             background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para as seções */
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
-            margin-bottom: 20px;
             text-align: left;
         }
 
@@ -72,20 +81,9 @@
             color: #000000; /* Cor preta para os títulos das seções */
         }
 
-        .section ul {
-            list-style-type: disc; /* Adiciona marcadores à lista */
-            padding-left: 20px;
-        }
-
-        .section li {
+        .section p {
             color: #000000; /* Cor preta para o texto das seções */
             font-size: 1em;
-        }
-
-        .separator {
-            border-left: 2px solid #ffffff;
-            height: auto;
-            margin: 0 20px;
         }
 
         .section a {
@@ -107,6 +105,13 @@
             color: #1e90ff;
         }
 
+        .divider {
+            width: 2px;
+            height: 100%;
+            background-color: #000000; /* Linha preta para separar as seções */
+            margin: 0 20px;
+        }
+
         footer {
             margin-top: auto; /* Garante que o rodapé fique no final da página */
             font-size: 0.9em;
@@ -115,24 +120,10 @@
             padding: 10px;
         }
 
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .section {
-                width: 45%;
-            }
-
-            h1 {
-                font-size: 2.5em;
-            }
-        }
-
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 1.8em;
+        @media (max-width: 768px) {
+            .section-wrapper {
+                flex-direction: column;
+                align-items: center;
             }
 
             .section {
@@ -141,9 +132,10 @@
                 margin-bottom: 15px;
             }
 
-            .section a {
-                font-size: 1em;
-                padding: 10px 20px;
+            .divider {
+                width: 100%;
+                height: 2px;
+                margin: 20px 0;
             }
         }
     </style>
@@ -186,39 +178,25 @@
     </header>
 
     <div class="container">
-        <div class="section">
-            <h2>Para Estabelecimentos</h2>
-            <p><strong>🚀 Transforme a forma como você entrega seus produtos!</strong></p>
-            <ul>
-                <li>Melhorias na eficiência das suas entregas.</li>
-                <li>Redução de custos com combustível e manutenção.</li>
-                <li>Plataforma fácil de usar e intuitiva.</li>
-                <li>Taxa mensal simbólica após o período de teste.</li>
-                <li>Sem necessidade de equipamentos adicionais.</li>
-            </ul>
-            <a href="pagina-estabelecimentos.html">Cadastrar seu Estabelecimento</a>
-        </div>
-        
-        <div class="separator"></div>
-        
-        <div class="section">
-            <h2>Para Motoboys</h2>
-            <p><strong>🚀 Junte-se a nós e seja parte de uma equipe de sucesso!</strong></p>
-            <ul>
-                <li>Flexibilidade de horários.</li>
-                <li>Suporte dedicado ao motoboy.</li>
-                <li>Ganhos justos por entrega realizada.</li>
-                <li>Plataforma simples e intuitiva.</li>
-                <li>Pagamentos semanais e transparentes.</li>
-            </ul>
-            <a href="pagina-motoboys.html">Cadastrar como Motoboy</a>
+        <div class="section-wrapper">
+            <div class="section">
+                <h2>Para Estabelecimentos</h2>
+                <p><strong>🚀 Transforme a forma como você entrega seus produtos!</strong></p>
+                <p>Estamos oferecendo uma oportunidade única para estabelecimentos em Planaltina-DF. Nossa plataforma de entregas oferece uma solução completa, sem gastos adicionais com combustível, mochila ou manutenção de moto. Além disso, você terá acesso a uma plataforma intuitiva e suporte dedicado para garantir o melhor serviço. <strong>Junte-se a nós e aproveite todos esses benefícios!</strong> 💼📦</p>
+                <a href="pagina-estabelecimentos.html">Cadastrar seu Estabelecimento</a>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h2>Para Motoboys</h2>
+                <p><strong>🚀 Junte-se a nós e seja parte de uma equipe de sucesso!</strong></p>
+                <p>Se você é um motoboy em Planaltina-DF e está procurando uma oportunidade de trabalho flexível com ganhos atrativos, a oLeleh Entregas é para você! Oferecemos suporte completo, flexibilidade de horários e uma plataforma intuitiva para você gerenciar suas entregas. Cadastre-se agora e faça parte da nossa equipe!</p>
+                <a href="pagina-motoboys.html">Cadastrar como Motoboy</a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>Entre em contato conosco pelo WhatsApp: <a href="https://wa.me/5561999512992" target="_blank" style="color: #ffffff;">+55 61 99951-2992</a></p>
         <p>&copy; 2024 oLeleh Entregas.</p>
     </footer>
 </body>
 </html>
-
