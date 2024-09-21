@@ -66,8 +66,28 @@
             text-align: left;
         }
 
-        .benefits, .copy, label, input, select {
-            color: #000000; /* Cor preta para textos do formulário e perguntas */
+        .form-container {
+            text-align: left;
+        }
+
+        .form-container h3 {
+            color: #000000; /* Cor preta para o texto de instrução */
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #000000; /* Cor preta para o texto de contato */
+        }
+
+        .contact-info a {
+            color: #28a745; /* Cor do link ajustada */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         img {
@@ -84,6 +104,7 @@
         label {
             margin-bottom: 10px;
             font-size: 1.1em;
+            color: #000000; /* Cor preta para os textos do formulário */
         }
 
         input, textarea, select {
@@ -118,6 +139,18 @@
             color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
             background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
             padding: 10px;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-contact img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -165,11 +198,22 @@
 
                 <button type="submit">Cadastrar Motoboy</button>
             </form>
+
+            <div class="contact-info">
+                <p>Após o cadastro, entrarei em contato para mais informações.</p>
+                <p>Para dúvidas imediatas, entre em contato pelo WhatsApp:</p>
+                <a href="https://wa.me/5561999512992" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/WhatsApp.svg" alt="WhatsApp"> +5561999512992
+                </a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2024 oLeleh Entregas.</p>
+        <div class="footer-contact">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/WhatsApp.svg" alt="WhatsApp">
+            <p>© 2024 oLeleh Entregas.</p>
+        </div>
     </footer>
 </body>
 </html>
