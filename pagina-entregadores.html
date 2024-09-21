@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Entregadores</title>
+    <title>Cadastro de Entregadores - Plataforma de Entregas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,127 +11,147 @@
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #39FF14;
-            color: black;
-            padding: 15px;
-            text-align: center;
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 30px;
         }
-        nav a {
-            color: black;
-            text-decoration: none;
+
+        header {
+            text-align: center;
             padding: 10px;
         }
-        .main-content {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
+
+        header img {
+            width: 150px;
+            margin-bottom: 20px;
         }
-        .form-section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        h1 {
+            color: #2e8b57;
         }
-        .form-section h2 {
-            margin-top: 0;
+
+        .benefits {
+            margin-top: 20px;
         }
-        .form-section label {
+
+        .benefits ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            background-color: #2e8b57;
+            color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .form-container {
+            margin-top: 30px;
+        }
+
+        label {
             display: block;
             margin-top: 10px;
+            font-weight: bold;
         }
-        .form-section input, .form-section textarea {
+
+        input, textarea {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .form-section button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #39FF14;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .form-section button:hover {
-            background-color: #32e10d;
-            transform: scale(1.05);
-        }
-        .thank-you-message {
-            display: none;
-            padding: 15px;
-            margin-top: 20px;
+            border-radius: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #d4edda;
-            color: #155724;
         }
-        footer {
-            background-color: #39FF14;
-            color: black;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
+
+        button {
+            background-color: #2e8b57;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
             width: 100%;
-            bottom: 0;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #276746;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Cadastro de Entregadores</h1>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="pagina-estabelecimentos.html">Estabelecimentos</a>
-            <a href="pagina-entregadores.html">Entregadores</a>
-        </nav>
-    </header>
-    <div class="main-content">
-        <h2>Benefícios para Entregadores</h2>
-        <p>Junte-se à nossa plataforma e aproveite os seguintes benefícios:</p>
-        <ul>
-            <li>Flexibilidade de horários</li>
-            <li>Remuneração justa e transparente</li>
-            <li>Pagamento rápido e seguro</li>
-            <li>Suporte contínuo e oportunidades de crescimento</li>
-        </ul>
-        <div class="form-section">
-            <h2>Formulário de Cadastro</h2>
-            <form id="entregadorForm" method="post" action="https://formspree.io/f/mpwagrnw">
-                <label for="name">Nome:</label>
+    <div class="container">
+        <header>
+            <!-- Logo -->
+            <img src="https://raw.githubusercontent.com/username/yourrepo/main/LogoPng1040x1040entregador.png" alt="Logo Leleh Entregas">
+            <h1>Cadastro de Entregadores</h1>
+            <p>Cadastre-se agora e comece a fazer entregas com a nossa plataforma!</p>
+        </header>
+
+        <!-- Benefícios para os Entregadores -->
+        <div class="benefits">
+            <h2>Benefícios para Entregadores</h2>
+            <ul>
+                <li>Ganhos por entrega: de 0 a 2 km - R$7,20; de 2 a 4 km - R$9,60; de 4 a 6 km - R$12,00.</li>
+                <li>Receba seus pagamentos semanalmente, direto na sua conta bancária.</li>
+                <li>Trabalhe quando quiser, sem horários fixos.</li>
+                <li>Sem necessidade de investimento inicial: a plataforma é 100% gratuita.</li>
+                <li>Plataforma simples e prática de usar pelo celular.</li>
+            </ul>
+        </div>
+
+        <!-- Formulário de Cadastro -->
+        <div class="form-container">
+            <h2>Cadastre-se como Entregador</h2>
+            <form
+              action="https://formspree.io/f/mpwagrnw"
+              method="POST"
+            >
+                <label for="name">Nome Completo:</label>
                 <input type="text" id="name" name="name" required>
-                
+
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required>
-                
+
                 <label for="phone">Telefone:</label>
                 <input type="tel" id="phone" name="phone" required>
-                
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Enviar</button>
+
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="vehicle">Tipo de Veículo (Moto, Bicicleta, etc.):</label>
+                <input type="text" id="vehicle" name="vehicle" required>
+
+                <label for="message">Mensagem (opcional):</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Cadastrar Entregador</button>
             </form>
-            <div id="thankYouMessage" class="thank-you-message">
-                <p>Obrigado por se cadastrar como entregador! Entraremos em contato em breve.</p>
-            </div>
         </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2024 oLeleh Entregas</p>
+        </footer>
     </div>
-    <footer>
-        <p>© 2024 Plataforma de Entregas. Todos os direitos reservados.</p>
-    </footer>
-    <script>
-        document.getElementById('entregadorForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('thankYouMessage').style.display = 'block';
-            this.reset();
-        });
-    </script>
 </body>
 </html>
