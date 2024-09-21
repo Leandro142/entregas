@@ -7,16 +7,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true');
-            background-size: cover;
-            color: #333;
+            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
+            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
+            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+            color: #ffffff; /* Cor do texto ajustada para contraste */
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
         header {
-            background-color: rgba(30, 144, 255, 0.8);
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
             color: white;
             padding: 20px;
         }
@@ -27,61 +28,98 @@
         }
 
         .container {
+            display: flex;
+            justify-content: space-between;
             width: 100%;
             max-width: 1200px;
             margin: 30px auto;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
             padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
-            display: flex;
-            flex-wrap: wrap;
         }
 
-        .container img {
-            width: 200px;
+        .benefits, .form-container {
+            width: 48%;
+        }
+
+        .benefits {
+            text-align: left;
+            color: #000000; /* Cor preta para os textos dos benefícios */
+        }
+
+        .benefits ul {
+            list-style-type: disc; /* Adiciona marcadores aos itens da lista */
+            padding-left: 20px;
+            font-size: 1.1em;
+        }
+
+        .benefits li {
+            margin-bottom: 10px;
+        }
+
+        .copy {
+            color: #000000; /* Cor preta para a cópia persuasiva */
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-container {
+            text-align: left;
+        }
+
+        .form-container h3 {
+            color: #000000; /* Cor preta para o texto de instrução */
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #000000; /* Cor preta para o texto de contato */
+        }
+
+        .contact-info a {
+            color: #28a745; /* Cor do link ajustada */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            width: 100%; /* Logo ocupa toda a largura */
             height: auto;
             margin-bottom: 20px;
         }
 
-        .benefits {
-            width: 50%;
-            text-align: left;
-            padding-right: 20px;
-            box-sizing: border-box;
-        }
-
-        .form-section {
-            width: 50%;
-            text-align: left;
-            box-sizing: border-box;
-        }
-
-        .form-section form {
+        form {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
 
-        .form-section label {
+        label {
             margin-bottom: 10px;
             font-size: 1.1em;
-            color: black;
+            color: #000000; /* Cor preta para os textos do formulário */
         }
 
-        .form-section input, 
-        .form-section textarea, 
-        .form-section select {
+        input, textarea, select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 1em;
+            background-color: #ffffff; /* Fundo branco para inputs para melhor contraste */
+            color: #333; /* Cor do texto dentro dos inputs */
         }
 
-        .form-section button {
-            background-color: #1e90ff;
+        button {
+            background-color: #28a745;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -91,41 +129,28 @@
             transition: background-color 0.3s;
         }
 
-        .form-section button:hover {
-            background-color: #63b3ed;
-        }
-
-        .benefits ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            color: black;
-        }
-
-        .benefits h2 {
-            color: black;
-        }
-
-        .contact-link {
-            margin-top: 20px;
-            font-size: 1.1em;
-            color: black;
-        }
-
-        .contact-link a {
-            color: #1e90ff;
-            text-decoration: none;
+        button:hover {
+            background-color: #71e29f;
         }
 
         footer {
             margin-top: 20px;
             font-size: 0.9em;
-            color: black;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 0;
+            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+            padding: 10px;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-contact img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -136,8 +161,10 @@
 
     <div class="container">
         <div class="benefits">
+            <div class="copy">
+                Aproveite as vantagens de nossa plataforma e comece a economizar agora mesmo!
+            </div>
             <h2>Benefícios da Plataforma</h2>
-            <p>Descubra como nossa plataforma pode simplificar o seu trabalho e reduzir custos!</p>
             <ul>
                 <li>Primeiro mês gratuito (pague apenas as taxas de entrega)</li>
                 <li>Taxa simbólica de R$50 mensais após o período de teste</li>
@@ -146,8 +173,7 @@
                 <li>Suporte 24 horas</li>
             </ul>
         </div>
-
-        <div class="form-section">
+        <div class="form-container">
             <h3>Preencha o formulário abaixo para se cadastrar:</h3>
             <form action="https://formspree.io/f/mpwagrnw" method="POST">
                 <label for="name">Nome do Estabelecimento:</label>
@@ -165,14 +191,18 @@
                 <button type="submit">Cadastrar Estabelecimento</button>
             </form>
 
-            <div class="contact-link">
-                <p>Precisa de ajuda? Entre em contato pelo <a href="https://wa.me/5561999512992" target="_blank">WhatsApp</a> e receba mais informações!</p>
+            <div class="contact-info">
+                <p>Após o cadastro, entrarei em contato para mais informações.</p>
+                <p>Para dúvidas imediatas, entre em contato pelo WhatsApp:</p>
+                <p><a href="https://wa.me/5561999512992" target="_blank">+5561999512992</a></p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2024 oLeleh Entregas - Todos os direitos reservados.</p>
+        <div class="footer-contact">
+            <p>© 2024 oLeleh Entregas.</p>
+        </div>
     </footer>
 </body>
 </html>
