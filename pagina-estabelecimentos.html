@@ -25,14 +25,19 @@
     <!-- End Meta Pixel Code -->
     
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
         body {
+            display: flex;
+            flex-direction: column;
             font-family: Arial, sans-serif;
             background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
             background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
             background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
             color: #ffffff; /* Cor do texto ajustada para contraste */
-            margin: 0;
-            padding: 0;
             text-align: center;
         }
 
@@ -48,6 +53,7 @@
         }
 
         .container {
+            flex: 1; /* Faz com que o container ocupe o espaço restante da tela */
             display: flex;
             flex-direction: column; /* Coloca os itens em coluna para dispositivos móveis */
             justify-content: center;
@@ -156,11 +162,11 @@
         }
 
         footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
             padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Faz o rodapé ficar no final */
         }
 
         .footer-contact {
