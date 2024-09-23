@@ -3,200 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oLeleh Entregas</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true">
-
-    <!-- Meta Tags para Open Graph (Facebook e outras plataformas) -->
-    <meta property="og:title" content="oLeleh Entregas">
-    <meta property="og:description" content="Transforme a forma como você entrega seus produtos com a oLeleh Entregas. Inscreva-se agora para aproveitar nossos serviços!">
-    <meta property="og:image" content="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true">
-    <meta property="og:url" content="URL_DO_SEU_SITE">
-    <meta property="og:type" content="website">
-
-    <!-- Meta Tags para Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="oLeleh Entregas">
-    <meta name="twitter:description" content="Transforme a forma como você entrega seus produtos com a oLeleh Entregas. Inscreva-se agora para aproveitar nossos serviços!">
-    <meta name="twitter:image" content="https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true">
+    <title>Página Inicial - oLeleh Entregas</title>
+    <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png"> <!-- Favicon atualizado -->
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
-            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
-            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
-            color: #000000; /* Cor do texto ajustada para contraste */
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             text-align: center;
-            min-height: 100vh; /* Garante que o rodapé fique no final da página */
-            display: flex;
-            flex-direction: column;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
+            background-color: #007bff;
             color: white;
             padding: 20px;
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 0;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .section-wrapper {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .section {
-            width: 45%;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente para as seções */
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+        }
+
+        .copy {
+            margin-bottom: 40px;
             text-align: left;
         }
 
-        .section h2 {
-            color: #000000; /* Cor preta para os títulos das seções */
+        h2 {
+            color: #007bff;
         }
 
-        .section p {
-            color: #000000; /* Cor preta para o texto das seções */
-            font-size: 1em;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .section a {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #1e90ff; /* Cor azul para os links */
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .icon-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .icon-links a {
             text-decoration: none;
-            font-weight: bold;
+            color: #007bff;
             font-size: 1.2em;
-            padding: 15px 30px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-            margin-top: 20px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .section a:hover {
-            background-color: #f0f0f0;
-            color: #1e90ff;
-        }
-
-        .divider {
-            width: 2px;
-            height: 100%;
-            background-color: #000000; /* Linha preta para separar as seções */
-            margin: 0 20px;
+        .icon-links img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
         }
 
         footer {
-            margin-top: auto; /* Garante que o rodapé fique no final da página */
-            font-size: 0.9em;
-            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+            background-color: #007bff;
+            color: white;
             padding: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .section-wrapper {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section {
-                width: 90%;
-                max-width: none;
-                margin-bottom: 15px;
-            }
-
-            .divider {
-                width: 100%;
-                height: 2px;
-                margin: 20px 0;
-            }
+            font-size: 0.9em;
+            margin-top: 40px;
         }
     </style>
-
-    <!-- Meta Pixel Code para Estabelecimentos -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1584192278841858');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1584192278841858&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code para Estabelecimentos -->
-
-    <!-- Meta Pixel Code para Motoboys -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '485566044241920');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=485566044241920&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code para Motoboys -->
 </head>
 <body>
     <header>
-        <h1>oLeleh Entregas</h1>
+        <h1>Plataforma de Entregas</h1>
     </header>
 
     <div class="container">
-        <div class="section-wrapper">
-            <div class="section">
-                <h2>Para Estabelecimentos</h2>
-                <p><strong>🚀 Transforme a forma como você entrega seus produtos!</strong></p>
-                <p>Estamos oferecendo uma oportunidade única para estabelecimentos em Planaltina-DF. Nossa plataforma de entregas oferece uma solução completa, sem gastos adicionais com combustível, mochila ou manutenção de moto. Além disso, você terá acesso a uma plataforma intuitiva e suporte dedicado para garantir o melhor serviço. <strong>Junte-se a nós e aproveite todos esses benefícios!</strong> 💼📦</p>
-                <a href="pagina-estabelecimentos.html">Cadastrar seu Estabelecimento</a>
-            </div>
-            <div class="divider"></div>
-            <div class="section">
-                <h2>Para Motoboys</h2>
-                <p><strong>🚀 Junte-se a nós e seja parte de uma equipe de sucesso!</strong></p>
-                <p>Se você é um motoboy em Planaltina-DF e está procurando uma oportunidade de trabalho flexível com ganhos atrativos, a oLeleh Entregas é para você! Oferecemos suporte completo, flexibilidade de horários e uma plataforma intuitiva para você gerenciar suas entregas. Cadastre-se agora e faça parte da nossa equipe!</p>
-                <a href="pagina-motoboys.html">Cadastrar como Motoboy</a>
-            </div>
+        <div class="copy">
+            <h2>Para Estabelecimentos</h2>
+            <p>Com nossa plataforma de entregas, os estabelecimentos conseguem atender seus clientes com rapidez e eficiência, sem complicações logísticas. Tenha acesso a uma rede de motoboys disponíveis para atender suas demandas de entregas em qualquer momento do dia.</p>
+            <ul>
+                <li>Plataforma fácil de usar e com suporte 24 horas.</li>
+                <li>Reduza custos com transporte, manutenção e combustível.</li>
+                <li>Aumente a satisfação dos seus clientes com entregas rápidas e seguras.</li>
+                <li>Monitoramento em tempo real de cada entrega, garantindo transparência.</li>
+                <li>Flexibilidade para ajustar suas necessidades de entregas conforme a demanda.</li>
+            </ul>
+        </div>
+
+        <div class="copy">
+            <h2>Para Motoboys</h2>
+            <p>Cadastre-se em nossa plataforma e comece a ganhar dinheiro com suas entregas. Oferecemos flexibilidade de horários, suporte completo, e a possibilidade de gerenciar suas rotas de forma intuitiva e eficaz.</p>
+            <ul>
+                <li>Ganhe por entrega realizada, sem limites de ganhos.</li>
+                <li>Escolha seus horários de trabalho conforme sua disponibilidade.</li>
+                <li>Receba suporte dedicado e tenha acesso a uma plataforma intuitiva.</li>
+                <li>Garanta mais oportunidades de entregas e aumente seus ganhos.</li>
+                <li>Trabalhe em uma plataforma confiável e reconhecida.</li>
+            </ul>
+        </div>
+
+        <div class="icon-links">
+            <a href="cadastro-estabelecimentos.html">
+                <img src="https://image.flaticon.com/icons/png/512/3649/3649468.png" alt="Estabelecimentos">
+                Cadastro de Estabelecimentos
+            </a>
+            <a href="cadastro-motoboys.html">
+                <img src="https://image.flaticon.com/icons/png/512/1995/1995574.png" alt="Motoboys">
+                Cadastro de Motoboys
+            </a>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 oLeleh Entregas.</p>
+        <p>© 2024 oLeleh Entregas.</p>
     </footer>
 </body>
 </html>
