@@ -34,9 +34,6 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            min-height: 100vh; /* Garante que o rodapé fique no final da página */
-            display: flex;
-            flex-direction: column;
         }
 
         header {
@@ -52,10 +49,9 @@
 
         .container {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Coloca os itens em coluna para dispositivos móveis */
             justify-content: center;
-            align-items: center;
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 30px auto;
             background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
@@ -65,13 +61,13 @@
         }
 
         .benefits, .form-container {
-            width: 100%;
+            width: 100%; /* Ajusta a largura para 100% em dispositivos móveis */
+            margin-bottom: 20px; /* Adiciona margem inferior em dispositivos móveis */
         }
 
         .benefits {
             text-align: left;
             color: #000000; /* Cor preta para os textos dos benefícios */
-            margin-bottom: 20px;
         }
 
         .benefits ul {
@@ -160,7 +156,7 @@
         }
 
         footer {
-            margin-top: auto; /* Garante que o rodapé fique no final da página */
+            margin-top: 20px;
             font-size: 0.9em;
             color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
             background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
@@ -179,42 +175,18 @@
             margin-right: 10px;
         }
 
+        /* Adiciona regras responsivas para diferentes tamanhos de tela */
         @media (min-width: 768px) {
             .container {
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 30px;
+                flex-direction: row; /* Ajusta a direção do flex para linha em telas maiores */
             }
 
             .benefits, .form-container {
-                width: 48%;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .container {
-                padding: 20px;
+                width: 48%; /* Define a largura das seções para 48% em telas maiores */
             }
 
-            h1 {
-                font-size: 2em;
-            }
-
-            .copy {
-                font-size: 1.1em;
-            }
-
-            .benefits ul {
-                font-size: 1em;
-            }
-
-            .form-container h3 {
-                font-size: 1.1em;
-            }
-
-            button {
-                padding: 10px 20px;
-                font-size: 1em;
+            .form-container {
+                margin-left: 2%;
             }
         }
     </style>
