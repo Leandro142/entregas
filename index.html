@@ -9,14 +9,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-image: url('https://github.com/Leandro142/logo/blob/main/logo-fundo.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
             text-align: center;
         }
 
         header {
-            background-color: #007bff;
+            background-color: rgba(0, 123, 255, 0.8);
             color: white;
             padding: 20px;
         }
@@ -30,7 +34,7 @@
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
@@ -77,44 +81,70 @@
         }
 
         footer {
-            background-color: #007bff;
+            background-color: rgba(0, 123, 255, 0.8);
             color: white;
             padding: 10px;
             font-size: 0.9em;
             margin-top: 40px;
         }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .icon-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Plataforma de Entregas</h1>
+        <h1>oLeleh Entregas</h1>
     </header>
 
     <div class="container">
+        <!-- Copy para Estabelecimentos -->
         <div class="copy">
             <h2>Para Estabelecimentos</h2>
-            <p>Com nossa plataforma de entregas, os estabelecimentos conseguem atender seus clientes com rapidez e eficiência, sem complicações logísticas. Tenha acesso a uma rede de motoboys disponíveis para atender suas demandas de entregas em qualquer momento do dia.</p>
+            <p>Com nossa plataforma de entregas, os estabelecimentos têm a oportunidade de oferecer um serviço de entrega eficiente e confiável aos seus clientes, garantindo rapidez e satisfação.</p>
             <ul>
-                <li>Plataforma fácil de usar e com suporte 24 horas.</li>
-                <li>Reduza custos com transporte, manutenção e combustível.</li>
-                <li>Aumente a satisfação dos seus clientes com entregas rápidas e seguras.</li>
-                <li>Monitoramento em tempo real de cada entrega, garantindo transparência.</li>
-                <li>Flexibilidade para ajustar suas necessidades de entregas conforme a demanda.</li>
+                <li>Plataforma fácil de usar com suporte ao estabelecimento 24 horas por dia.</li>
+                <li>Acompanhamento em tempo real de cada entrega, garantindo controle e transparência durante todo o processo.</li>
+                <li>Redução de custos operacionais com logística, incluindo transporte, combustível e manutenção.</li>
+                <li>Otimização de tempo e recursos, sem a necessidade de gestão de entregadores internos.</li>
+                <li>Flexibilidade para ajustar suas entregas de acordo com a demanda do seu negócio.</li>
+                <li>Melhore a experiência dos seus clientes, oferecendo um serviço de entrega ágil e eficiente.</li>
             </ul>
         </div>
 
+        <!-- Copy para Motoboys -->
         <div class="copy">
             <h2>Para Motoboys</h2>
-            <p>Cadastre-se em nossa plataforma e comece a ganhar dinheiro com suas entregas. Oferecemos flexibilidade de horários, suporte completo, e a possibilidade de gerenciar suas rotas de forma intuitiva e eficaz.</p>
+            <p>Venha fazer parte da nossa plataforma e aumente seus ganhos trabalhando de forma independente, com flexibilidade de horários e suporte garantido. Trabalhe no seu ritmo e receba pagamentos de forma regular.</p>
             <ul>
-                <li>Ganhe por entrega realizada, sem limites de ganhos.</li>
-                <li>Escolha seus horários de trabalho conforme sua disponibilidade.</li>
-                <li>Receba suporte dedicado e tenha acesso a uma plataforma intuitiva.</li>
-                <li>Garanta mais oportunidades de entregas e aumente seus ganhos.</li>
-                <li>Trabalhe em uma plataforma confiável e reconhecida.</li>
+                <li>Ganhe por cada entrega realizada, com a liberdade de definir seus próprios horários.</li>
+                <li>Receba seus pagamentos de forma semanal, diretamente na sua conta bancária.</li>
+                <li>Plataforma simples e intuitiva para gerenciar suas entregas e ganhos.</li>
+                <li>Suporte dedicado para resolver qualquer dúvida ou problema rapidamente.</li>
+                <li>Tenha acesso a diversas oportunidades de entrega todos os dias.</li>
+                <li>Trabalhe de maneira independente e aumente seus ganhos com uma plataforma confiável e reconhecida.</li>
             </ul>
         </div>
 
+        <!-- Links para Cadastros -->
         <div class="icon-links">
             <a href="cadastro-estabelecimentos.html">
                 <img src="https://image.flaticon.com/icons/png/512/3649/3649468.png" alt="Estabelecimentos">
