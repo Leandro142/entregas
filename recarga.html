@@ -130,7 +130,9 @@
 
         <!-- QR Code exibido -->
         <div class="qr-code-container">
-            <img src="https://github.com/Leandro142/logo/blob/main/Meu%20pix%202.png?raw=true" alt="QR Code Pix">
+            <?php if (isset($_GET['qr_code'])): ?>
+                <img src="<?php echo $_GET['qr_code']; ?>" alt="QR Code Pix">
+            <?php endif; ?>
             <p>Escaneie o QR Code para realizar o pagamento</p>
         </div>
     </div>
