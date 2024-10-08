@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recarga de Crédito - oLeleh Entregas</title>
     <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png"> <!-- Favicon atualizado -->
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -117,7 +116,7 @@
         <p>Para recarregar sua conta, insira o nome do estabelecimento e o valor desejado. O QR Code será gerado com o valor preenchido automaticamente.</p>
 
         <!-- Formulário de recarga -->
-        <form action="gera_qrcode.php" method="post">
+        <form id="recargaForm">
             <label for="nomeEstabelecimento">Nome do Estabelecimento:</label>
             <input type="text" id="nomeEstabelecimento" name="nomeEstabelecimento" placeholder="Ex: Restaurante ABC" required>
 
@@ -129,10 +128,8 @@
         </form>
 
         <!-- QR Code exibido -->
-        <div class="qr-code-container">
-            <?php if (isset($_GET['qr_code'])): ?>
-                <img src="<?php echo $_GET['qr_code']; ?>" alt="QR Code Pix">
-            <?php endif; ?>
+        <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
+            <img id="qrCodeImage" src="" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento</p>
         </div>
     </div>
@@ -140,5 +137,40 @@
     <footer>
         <p>© 2024 oLeleh Entregas.</p>
     </footer>
+
+    <script>
+        document.getElementById('recargaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
+            const valor = document.getElementById('valor').value;
+
+            // Envia os dados para o Formspree
+            fetch('https://formspree.io/f/mpwagrnw', { // URL do seu formulário Formspree
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nomeEstabelecimento: nomeEstabelecimento,
+                    valor: valor
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Após o envio, redireciona para a página com o QR Code
+                    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(`Valor: R$${valor}\nEstabelecimento: ${nomeEstabelecimento}`)}&size=250x250`;
+                    document.getElementById('qrCodeImage').src = qrCodeUrl;
+                    document.getElementById('qrCodeContainer').style.display = 'block';
+                } else {
+                    alert('Erro ao enviar os dados. Tente novamente.');
+                }
+            })
+            .catch(error => {
+                alert('Erro ao enviar os dados. Tente novamente.');
+            });
+        });
+    </script>
 </body>
 </html>
