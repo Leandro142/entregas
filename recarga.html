@@ -132,7 +132,7 @@
     </header>
     <div class="container">
         <h2>Recarregue sua carteira de crédito</h2>
-        <p>Para recarregar sua conta, insira o nome do estabelecimento, CNPJ e o valor desejado. O QR Code será gerado com o valor necessário automaticamente.</p>
+        <p>Para recarregar sua conta, insira o nome do estabelecimento, CNPJ e o valor desejado. Após isso, clique em Gerar QR Code.</p>
         <!-- Formulário de recarga -->
         <form id="recargaForm" action="https://formspree.io/f/meoqjpko" method="POST">
             <label for="nomeEstabelecimento">Nome do Estabelecimento:</label>
@@ -149,7 +149,7 @@
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
             <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(16).jpeg?raw=true" alt="QR Code Pix">
-            <p>Escaneie o QR Code para realizar o pagamento</p>
+            <p>Escaneie o QR Code para realizar o pagamento, ou copie o pix abaixo.</p>
             <div class="pix-code-container">
                 <h3>Código Pix:</h3>
                 <p id="pixCode">00020126330014br.gov.bcb.pix011...</p>
@@ -161,7 +161,7 @@
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 oLeleh Entregas. Todos os direitos reservados.</p>
+        <p>&copy; 2024 oLeleh Entregas.</p>
     </footer>
     <script>
         function gerarQrCode() {
