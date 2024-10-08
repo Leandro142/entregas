@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recarga de Crédito - oLeleh Entregas</title>
     <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -140,11 +141,11 @@
             <label for="valor">Valor da Recarga (R$):</label>
             <input type="number" id="valor" name="valor" placeholder="Ex: 50.00" required>
             <!-- Botão para gerar QR Code -->
-            <input type="button" value="Gerar QR Code" id="gerarQrCodeButton">
+            <input type="button" value="Gerar QR Code" id="gerarQrCodeButton" onclick="gerarQrCode()">
         </form>
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
-            <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(3).png?raw=true" alt="QR Code Pix">
+            <img id="qrCodeImage" src="" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento</p>
             <p id="timer" style="font-size: 1.2em;">Aguarde...</p>
             <div class="pix-code-container">
@@ -161,6 +162,30 @@
         <p>&copy; 2024 oLeleh Entregas. Todos os direitos reservados.</p>
     </footer>
     <script>
+        function gerarQrCode() {
+            const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
+            const valor = document.getElementById('valor').value;
+
+            if (!nomeEstabelecimento || !valor) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            // Gerando o código Pix
+            const pixCode = `00020101021126830014br.gov.bcb.pix011${nomeEstabelecimento}5204000053039865802${valor}5802BR5914${nomeEstabelecimento}6009${valor}6304${Math.floor(Math.random() * 10000)}`;
+            document.getElementById('pixCode').innerText = pixCode;
+
+            // Gerando o QR Code
+            const qr = new QRious({
+                element: document.getElementById('qrCodeImage'),
+                value: pixCode,
+                size: 250
+            });
+
+            // Exibindo o QR Code e o código Pix
+            document.getElementById('qrCodeContainer').style.display = 'block';
+        }
+
         function copyPixCode() {
             const pixCodeElement = document.getElementById('pixCode');
             const pixCode = pixCodeElement.innerText;
