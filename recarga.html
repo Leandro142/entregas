@@ -66,7 +66,7 @@
             border-radius: 4px;
         }
 
-        input[type="submit"], .finalize-button {
+        .finalize-button {
             background-color: green;
             color: white;
             font-size: 1.5em;
@@ -78,7 +78,7 @@
             display: none; /* Inicialmente escondido */
         }
 
-        input[type="submit"]:hover, .finalize-button:hover {
+        .finalize-button:hover {
             background-color: darkgreen;
         }
 
@@ -125,7 +125,7 @@
             <input type="number" id="valor" name="valor" placeholder="Ex: 50.00" required>
 
             <!-- Botão para gerar QR Code -->
-            <input type="submit" value="Gerar QR Code">
+            <input type="button" value="Gerar QR Code" id="gerarQrCodeButton">
         </form>
 
         <!-- QR Code exibido -->
@@ -142,9 +142,7 @@
     </footer>
 
     <script>
-        document.getElementById('recargaForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-
+        document.getElementById('gerarQrCodeButton').addEventListener('click', function() {
             const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
             const valor = document.getElementById('valor').value;
 
