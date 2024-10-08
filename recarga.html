@@ -18,7 +18,7 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Para garantir que o rodapé fique no final */
+            min-height: 100vh;
         }
         header {
             background-color: black;
@@ -30,8 +30,8 @@
             margin: 0;
         }
         .container {
-            flex: 1; /* Para ocupar o espaço disponível */
-            max-width: 600px; /* Limita a largura do contêiner */
+            flex: 1;
+            max-width: 600px;
             margin: 30px auto;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.9);
@@ -53,8 +53,8 @@
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
-            border: 2px solid #333; /* Adicionando uma borda ao QR Code */
-            border-radius: 8px; /* Arredondando os cantos */
+            border: 2px solid #333;
+            border-radius: 8px;
         }
         input[type="text"], input[type="number"] {
             width: calc(100% - 22px);
@@ -122,7 +122,7 @@
             padding: 15px;
             margin: 20px 0;
             text-align: center;
-            background-color: white; /* Garante que fique no retângulo branco */
+            background-color: white;
         }
     </style>
 </head>
@@ -134,7 +134,7 @@
         <h2>Recarregue sua carteira de crédito</h2>
         <p>Para recarregar sua conta, insira o nome do estabelecimento, CNPJ e o valor desejado. Após isso, clique em Gerar QR Code.</p>
         <!-- Formulário de recarga -->
-        <form id="recargaForm" action="https://formspree.io/f/meoqjpko" method="POST">
+        <form id="recargaForm" action="https://formspree.io/f/meoqjpko" method="POST" onsubmit="redirectToThankYouPage(event)">
             <label for="nomeEstabelecimento">Nome do Estabelecimento:</label>
             <input type="text" id="nomeEstabelecimento" name="nomeEstabelecimento" placeholder="Ex: Restaurante ABC" required>
             
@@ -149,10 +149,10 @@
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
             <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(16).jpeg?raw=true" alt="QR Code Pix">
-            <p>Escaneie o QR Code para realizar o pagamento, ou copie o pix abaixo.</p>
+            <p>Escaneie o QR Code para realizar o pagamento, ou copie o pix abaixo e realize o pagamento em seu banco.</p>
             <div class="pix-code-container">
                 <h3>CPF Pix:</h3>
-                <p id="pixCode">069.577.341-02</p> <!-- Aqui está o novo código Pix baseado no CPF -->
+                <p id="pixCode">069.577.341-02</p>
                 <div class="button-container">
                     <button class="copy-button" onclick="copyPixCode()">Copiar CPF Pix</button>
                     <button class="finalize-button" onclick="finalizePix()">Finalizei o Pix</button>
@@ -192,6 +192,11 @@
 
         function finalizePix() {
             document.getElementById('recargaForm').submit();
+        }
+
+        function redirectToThankYouPage(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            window.location.href = 'pagina-de-agradecimento.html'; // Redireciona para a página de agradecimento
         }
     </script>
 </body>
