@@ -64,7 +64,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        #gerarQrCodeButton {
+        #gerarQrCodeButton, .copy-button {
             background-color: green;
             color: white;
             font-size: 1.5em;
@@ -75,7 +75,7 @@
             transition: background-color 0.3s ease;
             display: inline-block; /* Para que o botão ocupe somente o espaço necessário */
         }
-        #gerarQrCodeButton:hover {
+        #gerarQrCodeButton:hover, .copy-button:hover {
             background-color: darkgreen;
         }
         .finalize-button {
@@ -132,10 +132,13 @@
         </form>
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
-            <img id="qrCodeImage" src="" alt="QR Code Pix">
+            <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(3).png?raw=true" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento</p>
             <p id="timer" style="font-size: 1.2em;">Aguarde...</p>
             <button class="finalize-button" id="finalizeButton">Finalizei o Pix</button>
+            <h3>Código Pix:</h3>
+            <p id="pixCode">00020126330014br.gov.bcb.pix0111069577341025204000053039865802BR5923LEANDRO DA SILVA SANTOS6009Sao Paulo62070503***63048B3E</p>
+            <button class="copy-button" id="copyPixButton">Copiar Código Pix</button>
         </div>
     </div>
     <footer>
@@ -189,6 +192,17 @@
             .catch(error => {
                 alert('Erro ao finalizar o pagamento. Tente novamente.');
             });
+        });
+
+        document.getElementById('copyPixButton').addEventListener('click', function() {
+            const pixCode = document.getElementById('pixCode').textContent;
+            navigator.clipboard.writeText(pixCode)
+                .then(() => {
+                    alert('Código Pix copiado para a área de transferência!');
+                })
+                .catch(err => {
+                    console.error('Erro ao copiar o código Pix: ', err);
+                });
         });
     </script>
 </body>
