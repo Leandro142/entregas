@@ -151,10 +151,10 @@
             <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(16).jpeg?raw=true" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento, ou copie o pix abaixo.</p>
             <div class="pix-code-container">
-                <h3>Código Pix:</h3>
-                <p id="pixCode">00020126330014br.gov.bcb.pix0111069577341025204000053039865802BR5923LEANDRO DA SILVA SANTOS6009Sao Paulo62070503***63048B3E</p>
+                <h3>CPF Pix:</h3>
+                <p id="pixCode">123.456.789-10</p> <!-- Aqui está o novo código Pix baseado no CPF -->
                 <div class="button-container">
-                    <button class="copy-button" onclick="copyPixCode()">Copiar Código Pix</button>
+                    <button class="copy-button" onclick="copyPixCode()">Copiar CPF Pix</button>
                     <button class="finalize-button" onclick="finalizePix()">Finalizei o Pix</button>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                 return;
             }
 
-            const pixCode = `00020101021126830014br.gov.bcb.pix011${nomeEstabelecimento}5204000053039865802${valor}5802BR5914${nomeEstabelecimento}6009${valor}6304${Math.floor(Math.random() * 10000)}`;
+            const pixCode = `CPF: 123.456.789-10`; // CPF fixo como código Pix
             document.getElementById('pixCode').innerText = pixCode;
 
             document.getElementById('qrCodeContainer').style.display = 'block';
@@ -184,9 +184,9 @@
             const pixCodeElement = document.getElementById('pixCode');
             const pixCode = pixCodeElement.innerText;
             navigator.clipboard.writeText(pixCode).then(() => {
-                alert('Código Pix copiado com sucesso!');
+                alert('CPF Pix copiado com sucesso!');
             }, (err) => {
-                alert('Erro ao copiar o código Pix: ', err);
+                alert('Erro ao copiar o CPF Pix: ', err);
             });
         }
 
