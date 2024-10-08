@@ -66,7 +66,7 @@
             border-radius: 4px;
         }
 
-        input[type="submit"] {
+        input[type="submit"], .finalize-button {
             background-color: green;
             color: white;
             font-size: 1.5em;
@@ -75,9 +75,10 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: none; /* Inicialmente escondido */
         }
 
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, .finalize-button:hover {
             background-color: darkgreen;
         }
 
@@ -131,6 +132,8 @@
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
             <img id="qrCodeImage" src="" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento</p>
+            <p id="timer" style="font-size: 1.2em;">Aguarde...</p>
+            <button class="finalize-button" id="finalizeButton">Finalizei o Pix</button>
         </div>
     </div>
 
@@ -146,7 +149,7 @@
             const valor = document.getElementById('valor').value;
 
             // Envia os dados para o Formspree
-            fetch('https://formspree.io/f/mpwagrnw', { // URL do seu formulário Formspree
+            fetch('https://formspree.io/f/meoqjpko', { // URL do seu formulário Formspree
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -163,6 +166,26 @@
                     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(`Valor: R$${valor}\nEstabelecimento: ${nomeEstabelecimento}`)}&size=250x250`;
                     document.getElementById('qrCodeImage').src = qrCodeUrl;
                     document.getElementById('qrCodeContainer').style.display = 'block';
+
+                    // Inicia o temporizador de 5 segundos
+                    let timeLeft = 5;
+                    const timerElement = document.getElementById('timer');
+                    const finalizeButton = document.getElementById('finalizeButton');
+
+                    const timerInterval = setInterval(() => {
+                        timeLeft--;
+                        timerElement.textContent = `Aguarde... ${timeLeft} segundos restantes.`;
+                        if (timeLeft <= 0) {
+                            clearInterval(timerInterval);
+                            timerElement.textContent = ""; // Limpa o texto do temporizador
+                            finalizeButton.style.display = 'block'; // Mostra o botão "Finalizei o Pix"
+                        }
+                    }, 1000);
+
+                    finalizeButton.addEventListener('click', function() {
+                        window.location.href = 'pagina-agradecimento.html'; // Redireciona para a página de agradecimento
+                    });
+
                 } else {
                     alert('Erro ao enviar os dados. Tente novamente.');
                 }
