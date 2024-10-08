@@ -20,42 +20,35 @@
             flex-direction: column;
             min-height: 100vh; /* Para garantir que o rodapé fique no final */
         }
-
         header {
             background-color: black;
             color: white;
             padding: 20px;
         }
-
         h1 {
             font-size: 2.5em;
             margin: 0;
         }
-
         .container {
             flex: 1; /* Para ocupar o espaço disponível */
-            max-width: 600px; /* Limita a largura do container */
+            max-width: 600px; /* Limita a largura do contêiner */
             margin: 30px auto;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-
         h2 {
             color: black;
             font-size: 1.8em;
         }
-
         p {
             font-size: 1.3em;
         }
-
         .qr-code-container {
             text-align: center;
             margin: 20px 0;
         }
-
         .qr-code-container img {
             max-width: 100%; /* Exibe a imagem do QR Code por completo */
             height: auto; /* Mantém a proporção da imagem */
@@ -63,7 +56,6 @@
             border: 2px solid #333; /* Adicionando uma borda ao QR Code */
             border-radius: 8px; /* Arredondando os cantos */
         }
-
         input[type="text"], input[type="number"] {
             width: calc(100% - 22px); /* Ajustando a largura do input */
             padding: 10px;
@@ -72,7 +64,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         #gerarQrCodeButton {
             background-color: green;
             color: white;
@@ -84,11 +75,9 @@
             transition: background-color 0.3s ease;
             display: inline-block; /* Para que o botão ocupe somente o espaço necessário */
         }
-
         #gerarQrCodeButton:hover {
             background-color: darkgreen;
         }
-
         .finalize-button {
             background-color: green;
             color: white;
@@ -100,11 +89,9 @@
             transition: background-color 0.3s ease;
             display: none; /* Inicialmente escondido */
         }
-
         .finalize-button:hover {
             background-color: darkgreen;
         }
-
         footer {
             background-color: black;
             color: white;
@@ -112,17 +99,14 @@
             font-size: 0.9em;
             margin-top: 40px;
         }
-
-        /* Responsividade */
+        /* Resposta */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
             }
-
             h2 {
                 font-size: 1.5em;
             }
-
             .container {
                 margin: 10px;
                 padding: 10px;
@@ -134,23 +118,18 @@
     <header>
         <h1>Recarga de Crédito</h1>
     </header>
-
     <div class="container">
         <h2>Recarregue sua carteira de crédito</h2>
-        <p>Para recarregar sua conta, insira o nome do estabelecimento e o valor desejado. O QR Code será gerado com o valor preenchido automaticamente.</p>
-
+        <p>Para recarregar sua conta, insira o nome do estabelecimento e o valor desejado. O QR Code será gerado com o valor necessário automaticamente.</p>
         <!-- Formulário de recarga -->
         <form id="recargaForm">
             <label for="nomeEstabelecimento">Nome do Estabelecimento:</label>
             <input type="text" id="nomeEstabelecimento" name="nomeEstabelecimento" placeholder="Ex: Restaurante ABC" required>
-
             <label for="valor">Valor da Recarga (R$):</label>
             <input type="number" id="valor" name="valor" placeholder="Ex: 50.00" required>
-
             <!-- Botão para gerar QR Code -->
             <input type="button" value="Gerar QR Code" id="gerarQrCodeButton">
         </form>
-
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
             <img id="qrCodeImage" src="" alt="QR Code Pix">
@@ -159,82 +138,56 @@
             <button class="finalize-button" id="finalizeButton">Finalizei o Pix</button>
         </div>
     </div>
-
     <footer>
         <p>© 2024 oLeleh Entregas.</p>
     </footer>
-
     <script>
         document.getElementById('gerarQrCodeButton').addEventListener('click', function() {
             const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
             const valor = document.getElementById('valor').value;
 
-            // Envia os dados para o Formspree
+            // Gera a URL do QR Code com os dados corretos
+            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(`Valor: R$${valor}\nEstabelecimento: ${nomeEstabelecimento}`)}`;
+            document.getElementById('qrCodeImage').src = qrCodeUrl;
+            document.getElementById('qrCodeContainer').style.display = 'block';
+
+            // Inicia o temporizador de 5 segundos
+            let timeLeft = 5;
+            const timerElement = document.getElementById('timer');
+            const finalizeButton = document.getElementById('finalizeButton');
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = `Aguarde... ${timeLeft} segundos restantes.`;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timerElement.textContent = ""; // Limpa o texto do temporizador
+                    finalizeButton.style.display = 'block'; // Mostra o botão "Finalizei o Pix"
+                }
+            }, 1000);
+        });
+
+        document.getElementById('finalizeButton').addEventListener('click', function() {
+            const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
+            const valor = document.getElementById('valor').value;
+
+            // Envia o formulário ao clicar em "Finalizei o Pix"
             fetch('https://formspree.io/f/meoqjpko', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    nomeEstabelecimento: nomeEstabelecimento,
-                    valor: valor
-                })
+                body: JSON.stringify({ nomeEstabelecimento: nomeEstabelecimento, valor: valor, status: "Pagamento finalizado" })
             })
             .then(response => {
                 if (response.ok) {
-                    // Após o envio, redireciona para a página com o QR Code
-                    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(`Valor: R$${valor}\nEstabelecimento: ${nomeEstabelecimento}`)}&size=250x250`;
-                    document.getElementById('qrCodeImage').src = qrCodeUrl;
-                    document.getElementById('qrCodeContainer').style.display = 'block';
-
-                    // Inicia o temporizador de 5 segundos
-                    let timeLeft = 5;
-                    const timerElement = document.getElementById('timer');
-                    const finalizeButton = document.getElementById('finalizeButton');
-
-                    const timerInterval = setInterval(() => {
-                        timeLeft--;
-                        timerElement.textContent = `Aguarde... ${timeLeft} segundos restantes.`;
-                        if (timeLeft <= 0) {
-                            clearInterval(timerInterval);
-                            timerElement.textContent = ""; // Limpa o texto do temporizador
-                            finalizeButton.style.display = 'block'; // Mostra o botão "Finalizei o Pix"
-                        }
-                    }, 1000);
-
-                    finalizeButton.addEventListener('click', function() {
-                        // Envia o formulário ao clicar em "Finalizei o Pix"
-                        fetch('https://formspree.io/f/meoqjpko', {
-                            method: 'POST',
-                            headers: {
-                                'Accept': 'application/json',
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({
-                                nomeEstabelecimento: nomeEstabelecimento,
-                                valor: valor,
-                                status: "Pagamento finalizado"
-                            })
-                        })
-                        .then(response => {
-                            if (response.ok) {
-                                window.location.href = 'pagina-agradecimento.html'; // Redireciona para a página de agradecimento
-                            } else {
-                                alert('Erro ao finalizar o pagamento. Tente novamente.');
-                            }
-                        })
-                        .catch(error => {
-                            alert('Erro ao finalizar o pagamento. Tente novamente.');
-                        });
-                    });
-
+                    window.location.href = 'pagina-agradecimento.html'; // Redireciona para a página de agradecimento
                 } else {
-                    alert('Erro ao enviar os dados. Tente novamente.');
+                    alert('Erro ao finalizar o pagamento. Tente novamente.');
                 }
             })
             .catch(error => {
-                alert('Erro ao enviar os dados. Tente novamente.');
+                alert('Erro ao finalizar o pagamento. Tente novamente.');
             });
         });
     </script>
