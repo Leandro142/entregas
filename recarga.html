@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recarga de Crédito - oLeleh Entregas</title>
     <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,14 +50,14 @@
             margin: 20px 0;
         }
         .qr-code-container img {
-            max-width: 100%; /* Exibe a imagem do QR Code por completo */
-            height: auto; /* Mantém a proporção da imagem */
+            max-width: 100%;
+            height: auto;
             margin-bottom: 20px;
             border: 2px solid #333; /* Adicionando uma borda ao QR Code */
             border-radius: 8px; /* Arredondando os cantos */
         }
         input[type="text"], input[type="number"] {
-            width: calc(100% - 22px); /* Ajustando a largura do input */
+            width: calc(100% - 22px);
             padding: 10px;
             font-size: 1.1em;
             margin-bottom: 20px;
@@ -87,7 +86,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 10px; /* Para espaçamento */
+            margin: 10px;
         }
         .copy-button:hover, .finalize-button:hover {
             background-color: darkgreen;
@@ -99,7 +98,6 @@
             font-size: 0.9em;
             margin-top: 40px;
         }
-        /* Resposta */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -114,16 +112,16 @@
         }
         .button-container {
             display: flex;
-            justify-content: center; /* Para centralizar os botões */
-            align-items: center; /* Alinha verticalmente os botões */
-            margin-top: 20px; /* Espaçamento superior */
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
         .pix-code-container {
-            border: 2px solid #333; /* Borda ao redor do código Pix */
-            border-radius: 8px; /* Arredondando os cantos */
-            padding: 15px; /* Espaçamento interno */
-            margin: 20px 0; /* Espaçamento superior e inferior */
-            text-align: center; /* Centralizando o texto */
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
         }
     </style>
 </head>
@@ -140,17 +138,15 @@
             <input type="text" id="nomeEstabelecimento" name="nomeEstabelecimento" placeholder="Ex: Restaurante ABC" required>
             <label for="valor">Valor da Recarga (R$):</label>
             <input type="number" id="valor" name="valor" placeholder="Ex: 50.00" required>
-            <!-- Botão para gerar QR Code -->
             <input type="button" value="Gerar QR Code" id="gerarQrCodeButton" onclick="gerarQrCode()">
         </form>
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
-            <img id="qrCodeImage" src="" alt="QR Code Pix">
+            <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(16).jpeg?raw=true" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento</p>
-            <p id="timer" style="font-size: 1.2em;">Aguarde...</p>
             <div class="pix-code-container">
                 <h3>Código Pix:</h3>
-                <p id="pixCode">00020126330014br.gov.bcb.pix011...</p> <!-- Adicione aqui o código completo -->
+                <p id="pixCode">00020126330014br.gov.bcb.pix011...</p>
                 <div class="button-container">
                     <button class="copy-button" onclick="copyPixCode()">Copiar Código Pix</button>
                     <button class="finalize-button" onclick="finalizePix()">Finalizei o Pix</button>
@@ -171,18 +167,9 @@
                 return;
             }
 
-            // Gerando o código Pix
             const pixCode = `00020101021126830014br.gov.bcb.pix011${nomeEstabelecimento}5204000053039865802${valor}5802BR5914${nomeEstabelecimento}6009${valor}6304${Math.floor(Math.random() * 10000)}`;
             document.getElementById('pixCode').innerText = pixCode;
 
-            // Gerando o QR Code
-            const qr = new QRious({
-                element: document.getElementById('qrCodeImage'),
-                value: pixCode,
-                size: 250
-            });
-
-            // Exibindo o QR Code e o código Pix
             document.getElementById('qrCodeContainer').style.display = 'block';
         }
 
@@ -195,10 +182,9 @@
                 alert('Erro ao copiar o código Pix: ', err);
             });
         }
-        
+
         function finalizePix() {
-            alert('Pagamento finalizado. Obrigado!');
-            // Aqui você pode adicionar lógica para lidar com a finalização do pagamento
+            window.location.href = 'pagina-agradecimento.html';
         }
     </script>
 </body>
