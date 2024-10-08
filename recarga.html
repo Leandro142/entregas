@@ -64,7 +64,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        #gerarQrCodeButton, .copy-button {
+        #gerarQrCodeButton {
             background-color: green;
             color: white;
             font-size: 1.5em;
@@ -73,12 +73,11 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            display: inline-block; /* Para que o botão ocupe somente o espaço necessário */
         }
-        #gerarQrCodeButton:hover, .copy-button:hover {
+        #gerarQrCodeButton:hover {
             background-color: darkgreen;
         }
-        .finalize-button {
+        .copy-button, .finalize-button {
             background-color: green;
             color: white;
             font-size: 1.5em;
@@ -87,9 +86,9 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            display: none; /* Inicialmente escondido */
+            margin: 10px; /* Para espaçamento */
         }
-        .finalize-button:hover {
+        .copy-button:hover, .finalize-button:hover {
             background-color: darkgreen;
         }
         footer {
@@ -111,6 +110,12 @@
                 margin: 10px;
                 padding: 10px;
             }
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Para posicionar os botões à esquerda e à direita */
+            align-items: center; /* Alinha verticalmente os botões */
+            margin-top: 20px; /* Espaçamento superior */
         }
     </style>
 </head>
@@ -138,7 +143,10 @@
             <button class="finalize-button" id="finalizeButton">Finalizei o Pix</button>
             <h3>Código Pix:</h3>
             <p id="pixCode">00020126330014br.gov.bcb.pix0111069577341025204000053039865802BR5923LEANDRO DA SILVA SANTOS6009Sao Paulo62070503***63048B3E</p>
-            <button class="copy-button" id="copyPixButton">Copiar Código Pix</button>
+            <div class="button-container">
+                <button class="copy-button" id="copyPixButton">Copiar Código Pix</button>
+                <button class="finalize-button" id="finalizeButton">Finalizei o Pix</button>
+            </div>
         </div>
     </div>
     <footer>
@@ -196,13 +204,11 @@
 
         document.getElementById('copyPixButton').addEventListener('click', function() {
             const pixCode = document.getElementById('pixCode').textContent;
-            navigator.clipboard.writeText(pixCode)
-                .then(() => {
-                    alert('Código Pix copiado para a área de transferência!');
-                })
-                .catch(err => {
-                    console.error('Erro ao copiar o código Pix: ', err);
-                });
+            navigator.clipboard.writeText(pixCode).then(() => {
+                alert('Código Pix copiado para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar o código Pix: ', err);
+            });
         });
     </script>
 </body>
