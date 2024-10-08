@@ -57,7 +57,8 @@
         }
 
         .qr-code-container img {
-            max-width: 250px;
+            max-width: 100%; /* Exibe a imagem do QR Code por completo */
+            height: auto; /* Mantém a proporção da imagem */
             margin-bottom: 20px;
             border: 2px solid #333; /* Adicionando uma borda ao QR Code */
             border-radius: 8px; /* Arredondando os cantos */
@@ -203,7 +204,29 @@
                     }, 1000);
 
                     finalizeButton.addEventListener('click', function() {
-                        window.location.href = 'pagina-agradecimento.html'; // Redireciona para a página de agradecimento
+                        // Envia o formulário ao clicar em "Finalizei o Pix"
+                        fetch('https://formspree.io/f/meoqjpko', {
+                            method: 'POST',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                nomeEstabelecimento: nomeEstabelecimento,
+                                valor: valor,
+                                status: "Pagamento finalizado"
+                            })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                window.location.href = 'pagina-agradecimento.html'; // Redireciona para a página de agradecimento
+                            } else {
+                                alert('Erro ao finalizar o pagamento. Tente novamente.');
+                            }
+                        })
+                        .catch(error => {
+                            alert('Erro ao finalizar o pagamento. Tente novamente.');
+                        });
                     });
 
                 } else {
