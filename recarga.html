@@ -122,6 +122,7 @@
             padding: 15px;
             margin: 20px 0;
             text-align: center;
+            background-color: white; /* Garante que fique no retângulo branco */
         }
     </style>
 </head>
@@ -131,13 +132,18 @@
     </header>
     <div class="container">
         <h2>Recarregue sua carteira de crédito</h2>
-        <p>Para recarregar sua conta, insira o nome do estabelecimento e o valor desejado. O QR Code será gerado com o valor necessário automaticamente.</p>
+        <p>Para recarregar sua conta, insira o nome do estabelecimento, CNPJ e o valor desejado. O QR Code será gerado com o valor necessário automaticamente.</p>
         <!-- Formulário de recarga -->
-        <form id="recargaForm">
+        <form id="recargaForm" action="https://formspree.io/f/meoqjpko" method="POST">
             <label for="nomeEstabelecimento">Nome do Estabelecimento:</label>
             <input type="text" id="nomeEstabelecimento" name="nomeEstabelecimento" placeholder="Ex: Restaurante ABC" required>
+            
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" id="cnpj" name="cnpj" placeholder="Ex: 00.000.000/0001-00" required>
+
             <label for="valor">Valor da Recarga (R$):</label>
             <input type="number" id="valor" name="valor" placeholder="Ex: 50.00" required>
+            
             <input type="button" value="Gerar QR Code" id="gerarQrCodeButton" onclick="gerarQrCode()">
         </form>
         <!-- QR Code exibido -->
@@ -161,8 +167,9 @@
         function gerarQrCode() {
             const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
             const valor = document.getElementById('valor').value;
+            const cnpj = document.getElementById('cnpj').value;
 
-            if (!nomeEstabelecimento || !valor) {
+            if (!nomeEstabelecimento || !valor || !cnpj) {
                 alert("Por favor, preencha todos os campos.");
                 return;
             }
@@ -184,7 +191,7 @@
         }
 
         function finalizePix() {
-            window.location.href = 'pagina-agradecimento.html';
+            document.getElementById('recargaForm').submit();
         }
     </script>
 </body>
