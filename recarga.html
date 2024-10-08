@@ -77,7 +77,7 @@
         #gerarQrCodeButton:hover {
             background-color: darkgreen;
         }
-        .copy-button, .finalize-button {
+        .copy-button {
             background-color: green;
             color: white;
             font-size: 1.5em;
@@ -88,7 +88,7 @@
             transition: background-color 0.3s ease;
             margin: 10px; /* Para espaçamento */
         }
-        .copy-button:hover, .finalize-button:hover {
+        .copy-button:hover {
             background-color: darkgreen;
         }
         footer {
@@ -137,15 +137,13 @@
         </form>
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
-            <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(3).png?raw=true" alt="QR Code Pix">
+            <img id="qrCodeImage" src="https://raw.githubusercontent.com/Leandro142/logo/refs/heads/main/Untitled%20image%20(3).png" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento</p>
             <p id="timer" style="font-size: 1.2em;">Aguarde...</p>
-            <button class="finalize-button" id="finalizeButton">Finalizei o Pix</button>
             <h3>Código Pix:</h3>
             <p id="pixCode">00020126330014br.gov.bcb.pix0111069577341025204000053039865802BR5923LEANDRO DA SILVA SANTOS6009Sao Paulo62070503***63048B3E</p>
             <div class="button-container">
                 <button class="copy-button" id="copyPixButton">Copiar Código Pix</button>
-                <button class="finalize-button" id="finalizeButton">Finalizei o Pix</button>
             </div>
         </div>
     </div>
@@ -165,41 +163,14 @@
             // Inicia o temporizador de 5 segundos
             let timeLeft = 5;
             const timerElement = document.getElementById('timer');
-            const finalizeButton = document.getElementById('finalizeButton');
             const timerInterval = setInterval(() => {
                 timeLeft--;
                 timerElement.textContent = `Aguarde... ${timeLeft} segundos restantes.`;
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
                     timerElement.textContent = ""; // Limpa o texto do temporizador
-                    finalizeButton.style.display = 'block'; // Mostra o botão "Finalizei o Pix"
                 }
             }, 1000);
-        });
-
-        document.getElementById('finalizeButton').addEventListener('click', function() {
-            const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
-            const valor = document.getElementById('valor').value;
-
-            // Envia o formulário ao clicar em "Finalizei o Pix"
-            fetch('https://formspree.io/f/meoqjpko', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ nomeEstabelecimento: nomeEstabelecimento, valor: valor, status: "Pagamento finalizado" })
-            })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = 'pagina-agradecimento.html'; // Redireciona para a página de agradecimento
-                } else {
-                    alert('Erro ao finalizar o pagamento. Tente novamente.');
-                }
-            })
-            .catch(error => {
-                alert('Erro ao finalizar o pagamento. Tente novamente.');
-            });
         });
 
         document.getElementById('copyPixButton').addEventListener('click', function() {
