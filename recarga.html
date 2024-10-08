@@ -77,7 +77,7 @@
         #gerarQrCodeButton:hover {
             background-color: darkgreen;
         }
-        .copy-button {
+        .copy-button, .finalize-button {
             background-color: green;
             color: white;
             font-size: 1.5em;
@@ -88,7 +88,7 @@
             transition: background-color 0.3s ease;
             margin: 10px; /* Para espaçamento */
         }
-        .copy-button:hover {
+        .copy-button:hover, .finalize-button:hover {
             background-color: darkgreen;
         }
         footer {
@@ -113,9 +113,16 @@
         }
         .button-container {
             display: flex;
-            justify-content: space-between; /* Para posicionar os botões à esquerda e à direita */
+            justify-content: center; /* Para centralizar os botões */
             align-items: center; /* Alinha verticalmente os botões */
             margin-top: 20px; /* Espaçamento superior */
+        }
+        .pix-code-container {
+            border: 2px solid #333; /* Borda ao redor do código Pix */
+            border-radius: 8px; /* Arredondando os cantos */
+            padding: 15px; /* Espaçamento interno */
+            margin: 20px 0; /* Espaçamento superior e inferior */
+            text-align: center; /* Centralizando o texto */
         }
     </style>
 </head>
@@ -137,50 +144,37 @@
         </form>
         <!-- QR Code exibido -->
         <div class="qr-code-container" id="qrCodeContainer" style="display: none;">
-            <img id="qrCodeImage" src="https://raw.githubusercontent.com/Leandro142/logo/refs/heads/main/Untitled%20image%20(3).png" alt="QR Code Pix">
+            <img id="qrCodeImage" src="https://github.com/Leandro142/logo/blob/main/Untitled%20image%20(3).png?raw=true" alt="QR Code Pix">
             <p>Escaneie o QR Code para realizar o pagamento</p>
             <p id="timer" style="font-size: 1.2em;">Aguarde...</p>
-            <h3>Código Pix:</h3>
-            <p id="pixCode">00020126330014br.gov.bcb.pix0111069577341025204000053039865802BR5923LEANDRO DA SILVA SANTOS6009Sao Paulo62070503***63048B3E</p>
-            <div class="button-container">
-                <button class="copy-button" id="copyPixButton">Copiar Código Pix</button>
+            <div class="pix-code-container">
+                <h3>Código Pix:</h3>
+                <p id="pixCode">00020126330014br.gov.bcb.pix011...</p> <!-- Adicione aqui o código completo -->
+                <div class="button-container">
+                    <button class="copy-button" onclick="copyPixCode()">Copiar Código Pix</button>
+                    <button class="finalize-button" onclick="finalizePix()">Finalizei o Pix</button>
+                </div>
             </div>
         </div>
     </div>
     <footer>
-        <p>© 2024 oLeleh Entregas.</p>
+        <p>&copy; 2024 oLeleh Entregas. Todos os direitos reservados.</p>
     </footer>
     <script>
-        document.getElementById('gerarQrCodeButton').addEventListener('click', function() {
-            const nomeEstabelecimento = document.getElementById('nomeEstabelecimento').value;
-            const valor = document.getElementById('valor').value;
-
-            // Gera a URL do QR Code com os dados corretos
-            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(`Valor: R$${valor}\nEstabelecimento: ${nomeEstabelecimento}`)}`;
-            document.getElementById('qrCodeImage').src = qrCodeUrl;
-            document.getElementById('qrCodeContainer').style.display = 'block';
-
-            // Inicia o temporizador de 5 segundos
-            let timeLeft = 5;
-            const timerElement = document.getElementById('timer');
-            const timerInterval = setInterval(() => {
-                timeLeft--;
-                timerElement.textContent = `Aguarde... ${timeLeft} segundos restantes.`;
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    timerElement.textContent = ""; // Limpa o texto do temporizador
-                }
-            }, 1000);
-        });
-
-        document.getElementById('copyPixButton').addEventListener('click', function() {
-            const pixCode = document.getElementById('pixCode').textContent;
+        function copyPixCode() {
+            const pixCodeElement = document.getElementById('pixCode');
+            const pixCode = pixCodeElement.innerText;
             navigator.clipboard.writeText(pixCode).then(() => {
-                alert('Código Pix copiado para a área de transferência!');
-            }).catch(err => {
-                console.error('Erro ao copiar o código Pix: ', err);
+                alert('Código Pix copiado com sucesso!');
+            }, (err) => {
+                alert('Erro ao copiar o código Pix: ', err);
             });
-        });
+        }
+        
+        function finalizePix() {
+            alert('Pagamento finalizado. Obrigado!');
+            // Aqui você pode adicionar lógica para lidar com a finalização do pagamento
+        }
     </script>
 </body>
 </html>
