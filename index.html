@@ -16,7 +16,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white; /* Mudando a cor do texto para branco */
+            color: black; /* Mudando a cor do texto para preto */
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Para garantir que o rodapé fique no final */
@@ -24,7 +24,7 @@
 
         header {
             background-color: transparent;
-            color: white;
+            color: black; /* Alterando a cor do texto do header para preto */
             padding: 20px;
             text-align: center;
             position: relative;
@@ -87,7 +87,7 @@
         }
 
         h2 {
-            color: white; /* Alterando a cor do texto dos títulos para branco */
+            color: black; /* Alterando a cor do texto dos títulos para preto */
             font-size: 1.8em;
             text-shadow: none; /* Removendo o brilho do texto */
         }
@@ -229,35 +229,35 @@
                 <li>Flexibilidade de horários para motoboys.</li>
                 <li>Relatórios detalhados de entregas e ganhos.</li>
             </ul>
-            <p>Experimente nosso serviço e transforme sua forma de fazer entregas! </p>
+            <p>Trabalhamos para garantir a melhor experiência de entrega e maximizar a satisfação de nossos clientes.</p>
         </div>
 
         <!-- Seção Cadastro Estabelecimentos -->
         <div class="section" id="cadastro-estabelecimentos">
             <h2>Cadastro Estabelecimentos</h2>
-            <p>Se você é proprietário de um estabelecimento, e deseja se cadastrar em nossa plataforma, clique no botão abaixo:</p>
-            <a class="redirect-button" href="https://wa.me/5561999512992?text=Olá!%20Quero%20me%20cadastrar%20na%20plataforma%20oLeleh%20Entregas." target="_blank">Cadastro Estabelecimentos</a>
+            <p>Se você é um estabelecimento e deseja otimizar suas entregas, faça o cadastro conosco! Você poderá solicitar entregas de forma rápida e fácil.</p>
+            <a href="cadastro-estabelecimento.html" class="redirect-button">Cadastre seu Estabelecimento</a>
         </div>
 
         <!-- Seção Cadastro Motoboys -->
         <div class="section" id="cadastro-motoboys">
             <h2>Cadastro Motoboys</h2>
-            <p>Se você é um motoboy e deseja se cadastrar em nossa plataforma, clique no botão abaixo:</p>
-            <a class="redirect-button" href="https://play.google.com/store/apps/details?id=br.com.olelehentregas.taxi.taximachine" target="_blank">Cadastro Motoboys</a>
+            <p>Se você é um motoboy e deseja aumentar suas oportunidades de trabalho, cadastre-se em nossa plataforma! Acesse o app, veja suas rotas e comece a ganhar.</p>
+            <a href="cadastro-motoboy.html" class="redirect-button">Cadastre-se como Motoboy</a>
         </div>
 
         <!-- Seção Contato -->
         <div class="section" id="contato">
             <h2>Contato</h2>
-            <p>Para mais informações, entre em contato conosco:</p>
-            <p>WhatsApp: <a href="https://wa.me/5561999512992" target="_blank" style="color: yellow;">+55 61 99951-2992</a></p>
+            <p>Para mais informações, entre em contato conosco pelo WhatsApp:</p>
+            <a href="https://api.whatsapp.com/send?phone=5561999512992" class="redirect-button">Fale Conosco</a>
         </div>
 
-        <!-- Seção Recargas -->
+        <!-- Seção Recarga -->
         <div class="section" id="recarga">
             <h2>Recargas</h2>
-            <p>Faça sua recarga com facilidade! Clique no botão abaixo:</p>
-            <a class="btn-recarga" href="https://wa.me/5561999512992?text=Olá!%20Quero%20fazer%20uma%20recarga%20." target="_blank">Fazer Recarga</a>
+            <p>Se você é um motoboy e deseja recarregar seu saldo, clique no botão abaixo:</p>
+            <a href="recarga.html" class="btn-recarga">Recarregar Saldo</a>
         </div>
     </div>
 
@@ -270,9 +270,9 @@
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 if (section.id === sectionId) {
-                    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+                    section.style.display = section.style.display === 'block' ? 'none' : 'block'; // Alternar visibilidade
                 } else {
-                    section.style.display = 'none'; // Esconder as outras seções
+                    section.style.display = 'none'; // Ocultar outras seções
                 }
             });
         }
