@@ -17,6 +17,9 @@
             background-position: center;
             background-attachment: fixed;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Para garantir que o rodapé fique no final */
         }
 
         header {
@@ -34,10 +37,6 @@
         }
 
         nav {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
             padding: 10px;
             background-color: black; /* Cor do menu alterada para preto */
             z-index: 20;
@@ -73,6 +72,7 @@
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            flex-grow: 1; /* Para ocupar o espaço restante */
             display: none; /* Inicialmente ocultar o conteúdo */
         }
 
@@ -142,7 +142,6 @@
             color: white;
             padding: 10px;
             font-size: 0.9em;
-            margin-top: 40px;
             text-align: center;
         }
 
@@ -181,7 +180,8 @@
             <ul>
                 <li><a href="#sobre" onclick="toggleSection('sobre')">Sobre Nós</a></li>
                 <li><a href="#servicos" onclick="toggleSection('servicos')">Nossos Serviços</a></li>
-                <li><a href="#cadastro-estabelecimentos" onclick="toggleSection('cadastro-estabelecimentos')">Cadastro</a></li>
+                <li><a href="#cadastro-estabelecimentos" onclick="toggleSection('cadastro-estabelecimentos')">Cadastro Estabelecimentos</a></li>
+                <li><a href="#cadastro-motoboys" onclick="toggleSection('cadastro-motoboys')">Cadastro Motoboys</a></li>
                 <li><a href="#contato" onclick="toggleSection('contato')">Contato</a></li>
                 <li><a href="#recarga" onclick="toggleSection('recarga')">Recargas</a></li>
             </ul>
@@ -219,7 +219,7 @@
         <div class="section" id="cadastro-motoboys">
             <h2>Para Motoboys</h2>
             <p>Seja um motoboy parceiro do oLeleh Entregas e ganhe por entrega com a flexibilidade de horários que você deseja. Faça parte de uma plataforma em constante crescimento.</p>
-            <a href="https://www.olelehentregas.com/pagina-motoboys.html" class="redirect-button">Cadastre-se como Motoboy</a>
+            <a href="https://play.google.com/store/apps/details?id=br.com.olelehentregas.taxi.taximachine" class="redirect-button">Cadastre-se como Motoboy</a>
         </div>
 
         <!-- Seção Contato -->
@@ -240,24 +240,21 @@
     </div>
 
     <footer>
-        <p>© 2024 oLeleh Entregas. Todos os direitos reservados.</p>
+        &copy; 2024 oLeleh Entregas. Todos os direitos reservados.
     </footer>
 
     <script>
+        // Função para alternar a visibilidade das seções
         function toggleSection(sectionId) {
             const sections = document.querySelectorAll('.section');
-            const container = document.getElementById('container');
-
-            // Ocultar todas as seções
             sections.forEach(section => {
-                section.style.display = 'none';
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
             });
-
-            // Mostrar a seção clicada
-            document.getElementById(sectionId).style.display = 'block';
-
-            // Garantir que o container seja exibido
-            container.style.display = 'block';
+            document.getElementById('container').style.display = 'block'; // Mostrar o container principal
         }
     </script>
 </body>
