@@ -74,7 +74,7 @@
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
-            background-color: rgba(57, 255, 20, 0.1); /* Fundo verde fluorescente e transparente */
+            background-color: rgba(57, 255, 20, 0.8); /* Fundo verde fluorescente menos transparente */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             flex-grow: 1; /* Para ocupar o espaço restante */
@@ -234,36 +234,35 @@
 
         <!-- Seção Cadastro Estabelecimentos -->
         <div class="section" id="cadastro-estabelecimentos">
-            <h2>Cadastro de Estabelecimentos</h2>
-            <p>Se você é proprietário de um estabelecimento e deseja melhorar suas entregas, cadastre-se agora mesmo!</p>
-            <a href="cadastro_estabelecimentos.html" class="redirect-button">Cadastre-se Aqui</a>
+            <h2>Cadastro Estabelecimentos</h2>
+            <p>Se você é um estabelecimento e deseja se cadastrar em nossa plataforma, clique no botão abaixo:</p>
+            <a class="redirect-button" href="https://wa.me/5561999512992?text=Olá!%20Quero%20me%20cadastrar%20na%20plataforma%20oLeleh%20Entregas." target="_blank">Cadastro Estabelecimentos</a>
         </div>
 
         <!-- Seção Cadastro Motoboys -->
         <div class="section" id="cadastro-motoboys">
-            <h2>Cadastro de Motoboys</h2>
-            <p>Se você é motoboy e deseja trabalhar conosco, cadastre-se e comece a ganhar!</p>
-            <a href="cadastro_motoboys.html" class="redirect-button">Cadastre-se Aqui</a>
+            <h2>Cadastro Motoboys</h2>
+            <p>Se você é um motoboy e deseja se cadastrar em nossa plataforma, clique no botão abaixo:</p>
+            <a class="redirect-button" href="https://play.google.com/store/apps/details?id=com.oleleh&hl=pt_BR&gl=US" target="_blank">Cadastro Motoboys</a>
         </div>
 
         <!-- Seção Contato -->
         <div class="section" id="contato">
             <h2>Contato</h2>
-            <p>Entre em contato conosco para mais informações:</p>
-            <p>Email: <a href="mailto:contato@olelehentregas.com" style="color: white;">contato@olelehentregas.com</a></p>
-            <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561999512992" style="color: white;">Clique aqui para falar conosco!</a></p>
+            <p>Para mais informações, entre em contato conosco:</p>
+            <p>WhatsApp: <a href="https://wa.me/5561999512992" target="_blank" style="color: yellow;">+55 61 99951-2992</a></p>
         </div>
 
-        <!-- Seção Recarga -->
+        <!-- Seção Recargas -->
         <div class="section" id="recarga">
             <h2>Recargas</h2>
-            <p>Para realizar recargas, clique no botão abaixo:</p>
-            <a href="recarga.html" class="btn-recarga">Realizar Recarga</a>
+            <p>Faça sua recarga com facilidade! Clique no botão abaixo:</p>
+            <a class="btn-recarga" href="https://wa.me/5561999512992?text=Olá!%20Quero%20fazer%20uma%20recarga%20." target="_blank">Fazer Recarga</a>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 oLeleh Entregas - Todos os direitos reservados.</p>
+        <p>&copy; 2024 oLeleh Entregas. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -271,15 +270,12 @@
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 if (section.id === sectionId) {
-                    section.style.display = section.style.display === 'block' ? 'none' : 'block'; // Alternar a visibilidade
+                    section.style.display = section.style.display === 'block' ? 'none' : 'block';
                 } else {
-                    section.style.display = 'none'; // Ocultar as outras seções
+                    section.style.display = 'none'; // Esconder as outras seções
                 }
             });
         }
-
-        // Exibir a seção inicial
-        toggleSection('sobre');
     </script>
 </body>
 
