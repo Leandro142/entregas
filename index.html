@@ -16,7 +16,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #333;
+            color: white; /* Mudando a cor do texto para branco */
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Para garantir que o rodapé fique no final */
@@ -36,7 +36,7 @@
             margin: 0;
             background-color: black; /* Faixa do título alterada para preto */
             padding: 10px;
-            text-shadow: 0 0 5px white; /* Contorno branco no texto */
+            text-shadow: none; /* Removendo o brilho do texto */
         }
 
         nav {
@@ -63,7 +63,7 @@
             text-decoration: none;
             font-size: 1.2em;
             transition: color 0.3s;
-            text-shadow: 0 0 5px white; /* Contorno branco no texto do menu */
+            text-shadow: none; /* Removendo o brilho do texto do menu */
         }
 
         nav ul li a:hover {
@@ -87,14 +87,14 @@
         }
 
         h2 {
-            color: black;
+            color: white; /* Alterando a cor do texto dos títulos para branco */
             font-size: 1.8em;
-            text-shadow: 0 0 5px white; /* Contorno branco no texto */
+            text-shadow: none; /* Removendo o brilho do texto */
         }
 
         p {
             font-size: 1.3em;
-            text-shadow: 0 0 5px white; /* Contorno branco no texto */
+            text-shadow: none; /* Removendo o brilho do texto */
         }
 
         ul {
@@ -106,7 +106,7 @@
             margin-bottom: 10px;
             font-size: 1.2em;
             line-height: 1.5;
-            text-shadow: 0 0 5px white; /* Contorno branco no texto */
+            text-shadow: none; /* Removendo o brilho do texto */
         }
 
         /* Botões de redirecionamento */
@@ -229,40 +229,41 @@
                 <li>Flexibilidade de horários para motoboys.</li>
                 <li>Relatórios detalhados de entregas e ganhos.</li>
             </ul>
-            <p>Experimente nosso serviço e transforme sua forma de fazer entregas! 🚀</p>
+            <p>Experimente nosso serviço e transforme sua forma de fazer entregas! </p>
         </div>
 
         <!-- Seção Cadastro Estabelecimentos -->
         <div class="section" id="cadastro-estabelecimentos">
-            <h2>Cadastro Estabelecimentos</h2>
-            <p>Se você é um estabelecimento que deseja cadastrar-se em nossa plataforma, clique no botão abaixo:</p>
-            <a href="cadastro_estabelecimentos.html" class="redirect-button">Cadastrar Estabelecimento</a>
+            <h2>Cadastro de Estabelecimentos</h2>
+            <p>Se você é proprietário de um estabelecimento e deseja melhorar suas entregas, cadastre-se agora mesmo!</p>
+            <a href="cadastro_estabelecimentos.html" class="redirect-button">Cadastre-se Aqui</a>
         </div>
 
         <!-- Seção Cadastro Motoboys -->
         <div class="section" id="cadastro-motoboys">
-            <h2>Cadastro Motoboys</h2>
-            <p>Se você é motoboy e quer se juntar a nós, clique no botão abaixo:</p>
-            <a href="cadastro_motoboys.html" class="redirect-button">Cadastrar Motoboy</a>
+            <h2>Cadastro de Motoboys</h2>
+            <p>Se você é motoboy e deseja trabalhar conosco, cadastre-se e comece a ganhar!</p>
+            <a href="cadastro_motoboys.html" class="redirect-button">Cadastre-se Aqui</a>
         </div>
 
         <!-- Seção Contato -->
         <div class="section" id="contato">
             <h2>Contato</h2>
-            <p>Tem alguma dúvida? Entre em contato conosco através do WhatsApp:</p>
-            <a href="https://wa.me/5561999512992" class="btn-recarga">WhatsApp</a>
+            <p>Entre em contato conosco para mais informações:</p>
+            <p>Email: <a href="mailto:contato@olelehentregas.com" style="color: white;">contato@olelehentregas.com</a></p>
+            <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561999512992" style="color: white;">Clique aqui para falar conosco!</a></p>
         </div>
 
         <!-- Seção Recarga -->
         <div class="section" id="recarga">
             <h2>Recargas</h2>
-            <p>Para informações sobre recargas, entre em contato através do nosso WhatsApp.</p>
-            <a href="https://wa.me/5561999512992" class="btn-recarga">Recarga</a>
+            <p>Para realizar recargas, clique no botão abaixo:</p>
+            <a href="recarga.html" class="btn-recarga">Realizar Recarga</a>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 oLeleh Entregas. Todos os direitos reservados.</p>
+        <p>&copy; 2024 oLeleh Entregas - Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -270,12 +271,15 @@
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
                 if (section.id === sectionId) {
-                    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+                    section.style.display = section.style.display === 'block' ? 'none' : 'block'; // Alternar a visibilidade
                 } else {
-                    section.style.display = 'none';
+                    section.style.display = 'none'; // Ocultar as outras seções
                 }
             });
         }
+
+        // Exibir a seção inicial
+        toggleSection('sobre');
     </script>
 </body>
 
