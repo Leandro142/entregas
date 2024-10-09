@@ -34,15 +34,16 @@
         h1 {
             font-size: 2.5em;
             margin: 0;
-            background-color: #39FF14; /* Faixa verde fluorescente para o título */
+            background-color: black; /* Faixa do título alterada para preto */
             padding: 10px;
+            text-shadow: 0 0 5px white; /* Contorno branco no texto */
         }
 
         nav {
             padding: 10px;
             background-color: black; /* Cor do menu alterada para preto */
             z-index: 20;
-            margin-top: 10px; /* Adiciona espaço entre o título e o menu */
+            margin-top: 0; /* Remove o espaço entre o título e o menu */
         }
 
         nav ul {
@@ -62,6 +63,7 @@
             text-decoration: none;
             font-size: 1.2em;
             transition: color 0.3s;
+            text-shadow: 0 0 5px white; /* Contorno branco no texto do menu */
         }
 
         nav ul li a:hover {
@@ -87,10 +89,12 @@
         h2 {
             color: black;
             font-size: 1.8em;
+            text-shadow: 0 0 5px white; /* Contorno branco no texto */
         }
 
         p {
             font-size: 1.3em;
+            text-shadow: 0 0 5px white; /* Contorno branco no texto */
         }
 
         ul {
@@ -102,6 +106,7 @@
             margin-bottom: 10px;
             font-size: 1.2em;
             line-height: 1.5;
+            text-shadow: 0 0 5px white; /* Contorno branco no texto */
         }
 
         /* Botões de redirecionamento */
@@ -222,39 +227,37 @@
                 <li>Suporte contínuo para estabelecimentos e entregadores.</li>
                 <li>Mapeamento em tempo real.</li>
                 <li>Flexibilidade de horários para motoboys.</li>
-                <li>Relatórios detalhados de entregas e transações.</li>
+                <li>Relatórios detalhados de entregas e ganhos.</li>
             </ul>
+            <p>Experimente nosso serviço e transforme sua forma de fazer entregas! 🚀</p>
         </div>
 
-        <!-- Seção Cadastro de Estabelecimentos -->
+        <!-- Seção Cadastro Estabelecimentos -->
         <div class="section" id="cadastro-estabelecimentos">
-            <h2>Para Estabelecimentos</h2>
-            <p>Com nossa plataforma, seu estabelecimento pode fornecer um serviço de entrega ágil e confiável, garantindo a satisfação dos seus clientes e a eficiência no gerenciamento logístico.</p>
-            <a href="https://wa.me/5561999512992" class="redirect-button">Cadastre seu Estabelecimento</a>
+            <h2>Cadastro Estabelecimentos</h2>
+            <p>Se você é um estabelecimento que deseja cadastrar-se em nossa plataforma, clique no botão abaixo:</p>
+            <a href="cadastro_estabelecimentos.html" class="redirect-button">Cadastrar Estabelecimento</a>
         </div>
 
-        <!-- Seção Cadastro de Motoboys -->
+        <!-- Seção Cadastro Motoboys -->
         <div class="section" id="cadastro-motoboys">
-            <h2>Para Motoboys</h2>
-            <p>Se você é motoboy e está em busca de novas oportunidades, nossa plataforma oferece ganhos justos, flexibilidade de horários e suporte para maximizar seus resultados.</p>
-            <a href="https://wa.me/5561999512992" class="redirect-button">Cadastre-se Como Motoboy</a>
+            <h2>Cadastro Motoboys</h2>
+            <p>Se você é motoboy e quer se juntar a nós, clique no botão abaixo:</p>
+            <a href="cadastro_motoboys.html" class="redirect-button">Cadastrar Motoboy</a>
         </div>
 
         <!-- Seção Contato -->
         <div class="section" id="contato">
             <h2>Contato</h2>
-            <p>Para dúvidas ou mais informações, entre em contato conosco:</p>
-            <ul>
-                <li>Email: contato@oleleh.com</li>
-                <li>Telefone: +55 61 99951-2992</li>
-            </ul>
+            <p>Tem alguma dúvida? Entre em contato conosco através do WhatsApp:</p>
+            <a href="https://wa.me/5561999512992" class="btn-recarga">WhatsApp</a>
         </div>
 
-        <!-- Seção Recargas -->
+        <!-- Seção Recarga -->
         <div class="section" id="recarga">
             <h2>Recargas</h2>
-            <p>Para recarregar sua conta, basta clicar no botão abaixo e seguir as instruções:</p>
-            <a href="https://www.oleleh.com/recarga" class="btn-recarga">Realizar Recarga</a>
+            <p>Para informações sobre recargas, entre em contato através do nosso WhatsApp.</p>
+            <a href="https://wa.me/5561999512992" class="btn-recarga">Recarga</a>
         </div>
     </div>
 
@@ -264,17 +267,14 @@
 
     <script>
         function toggleSection(sectionId) {
-            // Oculta todas as seções
-            var sections = document.querySelectorAll('.section');
-            sections.forEach(function (section) {
-                section.style.display = 'none';
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    section.style.display = 'none';
+                }
             });
-
-            // Exibe a seção clicada
-            var sectionToShow = document.getElementById(sectionId);
-            if (sectionToShow) {
-                sectionToShow.style.display = 'block';
-            }
         }
     </script>
 </body>
