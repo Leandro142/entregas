@@ -34,12 +34,15 @@
         h1 {
             font-size: 2.5em;
             margin: 0;
+            background-color: #39FF14; /* Faixa verde fluorescente para o título */
+            padding: 10px;
         }
 
         nav {
             padding: 10px;
             background-color: black; /* Cor do menu alterada para preto */
             z-index: 20;
+            margin-top: 10px; /* Adiciona espaço entre o título e o menu */
         }
 
         nav ul {
@@ -69,7 +72,7 @@
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(57, 255, 20, 0.1); /* Fundo verde fluorescente e transparente */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             flex-grow: 1; /* Para ocupar o espaço restante */
@@ -143,6 +146,7 @@
             padding: 10px;
             font-size: 0.9em;
             text-align: center;
+            margin-top: auto; /* Para garantir que fique no final da página */
         }
 
         /* Responsividade */
@@ -194,22 +198,22 @@
             <h2>Sobre Nós</h2>
             <p>​​A oLeleh Entregas foi criada para facilitar a logística de empresas e oferecer novas oportunidades para motoboys em Planaltina-DF e região. Conectamos empresas a motoboys alternativos, garantindo entregas rápidas, seguras e eficientes. Simplificamos o processo de entrega para que você possa focar no que realmente importa: o seu negócio!
 
-Missão :
-Transformar a maneira como as empresas realizam suas entregas, oferecendo um serviço completo e prático, e criar oportunidades para motoboys com facilidade e ganho por rota.
+            Missão:
+            Transformar a maneira como as empresas realizam suas entregas, oferecendo um serviço completo e prático, e criar oportunidades para motoboys com facilidade e ganho por rota.
 
-O que fornece :
+            O que fornece:
 
-Para empresas : Gestão completa das entregas, sem preocupação com logística. Economize tempo e reduza custos operacionais.
-Para motoboys : Ganhos por entrega, flexibilidade de horários e suporte para te ajudar a crescer.
-Diferenciais :
+            Para empresas: Gestão completa das entregas, sem preocupação com logística. Economize tempo e reduza custos operacionais.
+            Para motoboys: Ganhos por entrega, flexibilidade de horários e suporte para te ajudar a crescer.
+            Diferenciais:
 
-Painel de controle para empresas monitoram suas entregas em tempo real.
-App exclusivo para motoboys acompanhem suas rotas, ganhos e detalhes das entregas.
-Agilidade e praticidade na conexão entre empresas e motoboys.
-Sem custos fixos altos para as empresas e taxas justas para entregadores.
-Junte-se a nós!
-📦 Empresas: Melhore sua eficiência logística.
-🚴‍♂️ Motoboys: Ganhe mais por entrega e tenha controle total do seu trabalho.</p>
+            Painel de controle para empresas monitoram suas entregas em tempo real.
+            App exclusivo para motoboys acompanhem suas rotas, ganhos e detalhes das entregas.
+            Agilidade e praticidade na conexão entre empresas e motoboys.
+            Sem custos fixos altos para as empresas e taxas justas para entregadores.
+            Junte-se a nós!
+            📦 Empresas: Melhore sua eficiência logística.
+            🚴‍♂️ Motoboys: Ganhe mais por entrega e tenha controle total do seu trabalho.</p>
         </div>
 
         <!-- Seção Serviços -->
@@ -236,43 +240,42 @@ Junte-se a nós!
         <div class="section" id="cadastro-motoboys">
             <h2>Para Motoboys</h2>
             <p>Seja um motoboy parceiro do oLeleh Entregas e ganhe por entrega com a flexibilidade de horários que você deseja. Faça parte de uma plataforma em constante crescimento.</p>
-            <a href="https://play.google.com/store/apps/details?id=br.com.olelehentregas.taxi.taximachine" class="redirect-button">Cadastre-se como Motoboy</a>
+            <a href="https://wa.me/5561999512992" class="redirect-button">Cadastre-se como Motoboy</a>
         </div>
 
         <!-- Seção Contato -->
         <div class="section" id="contato">
-            <h2>Fale Conosco</h2>
-            <p>Entre em contato com nossa equipe para tirar dúvidas ou obter mais informações sobre como nossa plataforma pode ajudar seu negócio.</p>
-            <p><strong>Email:</strong> contato@olelehentregas.com</p>
-            <p><strong>Telefone:</strong> +55 61 99951-2992</p>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561999512992" class="redirect-button">Fale Conosco via WhatsApp</a></p>
+            <h2>Contato</h2>
+            <p>Se você tiver dúvidas ou quiser mais informações, não hesite em entrar em contato conosco. Estamos aqui para ajudar!</p>
+            <a href="https://wa.me/5561999512992" class="redirect-button">Fale Conosco</a>
         </div>
 
-        <!-- Seção de Recarga de Créditos -->
+        <!-- Seção Recargas -->
         <div class="section" id="recarga">
-            <h2>Recarregar Créditos (Estabelecimentos)</h2>
-            <p>Mantenha seus serviços ativos recarregando créditos em sua conta. Continue utilizando nossas soluções de entrega com tranquilidade.</p>
-            <a href="https://www.olelehentregas.com/recarga.html" class="btn-recarga">Recarregar Créditos</a>
+            <h2>Recargas</h2>
+            <p>Para empresas, oferecemos um sistema de recarga prática para garantir que você tenha sempre recursos disponíveis para suas entregas.</p>
+            <a href="https://wa.me/5561999512992" class="btn-recarga">Saiba Mais sobre Recargas</a>
         </div>
     </div>
 
     <footer>
-        &copy; 2024 oLeleh Entregas. Todos os direitos reservados.
+        <p>&copy; 2024 oLeleh Entregas. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Função para alternar a visibilidade das seções
         function toggleSection(sectionId) {
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
+                section.style.display = 'none'; // Oculta todas as seções
             });
-            document.getElementById('container').style.display = 'block'; // Mostrar o container principal
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block'; // Exibe a seção selecionada
         }
+
+        // Exibe a seção sobre como padrão ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleSection('sobre');
+        });
     </script>
 </body>
 
