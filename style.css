@@ -1,28 +1,35 @@
 /* Estilos gerais para o corpo da página */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
-    background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
-    background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
-    color: #ffffff; /* Cor do texto ajustada para contraste */
+    font-family: 'Roboto', sans-serif; /* Fonte mais moderna e profissional */
+    background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    color: #f5f5f5; /* Cor de texto suave para melhor contraste no fundo */
     margin: 0;
     padding: 0;
     text-align: center;
-    min-height: 100vh; /* Garante que o rodapé fique no final da página */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-attachment: fixed; /* Fundo fixo para efeito visual interessante */
 }
 
 /* Estilo do cabeçalho */
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
-    color: white;
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.85); 
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* Estilos do container principal */
@@ -34,10 +41,16 @@ h1 {
     width: 100%;
     max-width: 1200px;
     margin: 30px auto;
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco com opacidade leve */
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(8px); /* Suaviza o fundo */
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); /* Efeito de sombra ao passar o mouse */
 }
 
 /* Estilo dos benefícios e do formulário */
@@ -47,25 +60,27 @@ h1 {
 
 .benefits {
     text-align: left;
-    color: #000000; /* Cor preta para os textos dos benefícios */
+    color: #333; /* Cor mais suave para textos grandes */
 }
 
 .benefits ul {
-    list-style-type: disc; /* Adiciona marcadores aos itens da lista */
-    padding-left: 20px;
-    font-size: 1.1em;
+    list-style-type: disc;
+    padding-left: 25px;
+    font-size: 1.2em;
+    line-height: 1.6; /* Melhor espaçamento entre linhas */
 }
 
 .benefits li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .copy {
-    color: #000000; /* Cor preta para a cópia persuasiva */
-    font-size: 1.3em;
+    color: #333;
+    font-size: 1.4em;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: left;
+    line-height: 1.5; /* Espaçamento mais agradável */
 }
 
 .form-container {
@@ -73,60 +88,72 @@ h1 {
 }
 
 .form-container h3 {
-    color: #000000; /* Cor preta para o texto de instrução */
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 /* Estilo do formulário */
 form {
     display: flex;
     flex-direction: column;
+    gap: 15px; /* Espaçamento consistente entre os campos */
 }
 
 label {
-    margin-bottom: 10px;
     font-size: 1.1em;
-    color: #000000; /* Cor preta para os textos do formulário */
+    color: #333;
 }
 
 input, textarea, select {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-    background-color: #ffffff; /* Fundo branco para inputs para melhor contraste */
-    color: #333; /* Cor do texto dentro dos inputs */
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+    background-color: #fff;
+    color: #555;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #28a745; /* Destaque no campo focado */
+    outline: none;
 }
 
 button {
     background-color: #28a745;
-    color: white;
-    padding: 15px 30px;
+    color: #fff;
+    padding: 15px 40px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
+    border-radius: 8px;
+    font-size: 1.3em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #71e29f;
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
 }
 
 /* Estilo do rodapé */
 footer {
-    margin-top: auto; /* Garante que o rodapé fique no final da página */
-    font-size: 0.9em;
-    color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
-    padding: 10px;
+    margin-top: auto;
+    font-size: 0.95em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .footer-contact {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .footer-contact img {
@@ -140,7 +167,7 @@ footer {
     .container {
         flex-direction: row;
         justify-content: space-between;
-        padding: 30px;
+        padding: 40px;
     }
 
     .benefits, .form-container {
@@ -154,23 +181,23 @@ footer {
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 2.4em;
     }
 
     .copy {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     .benefits ul {
-        font-size: 1em;
-    }
-
-    .form-container h3 {
         font-size: 1.1em;
     }
 
+    .form-container h3 {
+        font-size: 1.2em;
+    }
+
     button {
-        padding: 10px 20px;
-        font-size: 1em;
+        padding: 10px 25px;
+        font-size: 1.1em;
     }
 }
