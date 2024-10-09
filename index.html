@@ -76,12 +76,12 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             flex-grow: 1; /* Para ocupar o espaço restante */
-            display: none; /* Inicialmente ocultar o conteúdo */
         }
 
         .section {
             margin-bottom: 40px;
             text-align: left;
+            display: none; /* Inicialmente ocultar o conteúdo */
         }
 
         h2 {
@@ -196,24 +196,21 @@
         <!-- Seção Sobre -->
         <div class="section" id="sobre">
             <h2>Sobre Nós</h2>
-            <p>​​A oLeleh Entregas foi criada para facilitar a logística de empresas e oferecer novas oportunidades para motoboys em Planaltina-DF e região. Conectamos empresas a motoboys alternativos, garantindo entregas rápidas, seguras e eficientes. Simplificamos o processo de entrega para que você possa focar no que realmente importa: o seu negócio!
-
-            Missão:
-            Transformar a maneira como as empresas realizam suas entregas, oferecendo um serviço completo e prático, e criar oportunidades para motoboys com facilidade e ganho por rota.
-
-            O que fornece:
-
-            Para empresas: Gestão completa das entregas, sem preocupação com logística. Economize tempo e reduza custos operacionais.
-            Para motoboys: Ganhos por entrega, flexibilidade de horários e suporte para te ajudar a crescer.
-            Diferenciais:
-
-            Painel de controle para empresas monitoram suas entregas em tempo real.
-            App exclusivo para motoboys acompanhem suas rotas, ganhos e detalhes das entregas.
-            Agilidade e praticidade na conexão entre empresas e motoboys.
-            Sem custos fixos altos para as empresas e taxas justas para entregadores.
-            Junte-se a nós!
-            📦 Empresas: Melhore sua eficiência logística.
-            🚴‍♂️ Motoboys: Ganhe mais por entrega e tenha controle total do seu trabalho.</p>
+            <p>A oLeleh Entregas foi criada para facilitar a logística de empresas e oferecer novas oportunidades para motoboys em Planaltina-DF e região. Conectamos empresas a motoboys alternativos, garantindo entregas rápidas, seguras e eficientes. Simplificamos o processo de entrega para que você possa focar no que realmente importa: o seu negócio!</p>
+            <p><strong>Missão:</strong> Transformar a maneira como as empresas realizam suas entregas, oferecendo um serviço completo e prático, e criar oportunidades para motoboys com facilidade e ganho por rota.</p>
+            <p><strong>O que fornece:</strong></p>
+            <ul>
+                <li>Para empresas: Gestão completa das entregas, sem preocupação com logística. Economize tempo e reduza custos operacionais.</li>
+                <li>Para motoboys: Ganhos por entrega, flexibilidade de horários e suporte para te ajudar a crescer.</li>
+            </ul>
+            <p><strong>Diferenciais:</strong></p>
+            <ul>
+                <li>Painel de controle para empresas monitoram suas entregas em tempo real.</li>
+                <li>App exclusivo para motoboys acompanhem suas rotas, ganhos e detalhes das entregas.</li>
+                <li>Agilidade e praticidade na conexão entre empresas e motoboys.</li>
+                <li>Sem custos fixos altos para as empresas e taxas justas para entregadores.</li>
+            </ul>
+            <p>Junte-se a nós! 📦 Empresas: Melhore sua eficiência logística. 🚴‍♂️ Motoboys: Ganhe mais por entrega e tenha controle total do seu trabalho.</p>
         </div>
 
         <!-- Seção Serviços -->
@@ -239,22 +236,25 @@
         <!-- Seção Cadastro de Motoboys -->
         <div class="section" id="cadastro-motoboys">
             <h2>Para Motoboys</h2>
-            <p>Seja um motoboy parceiro do oLeleh Entregas e ganhe por entrega com a flexibilidade de horários que você deseja. Faça parte de uma plataforma em constante crescimento.</p>
-            <a href="https://wa.me/5561999512992" class="redirect-button">Cadastre-se como Motoboy</a>
+            <p>Se você é motoboy e está em busca de novas oportunidades, nossa plataforma oferece ganhos justos, flexibilidade de horários e suporte para maximizar seus resultados.</p>
+            <a href="https://wa.me/5561999512992" class="redirect-button">Cadastre-se Como Motoboy</a>
         </div>
 
         <!-- Seção Contato -->
         <div class="section" id="contato">
             <h2>Contato</h2>
-            <p>Se você tiver dúvidas ou quiser mais informações, não hesite em entrar em contato conosco. Estamos aqui para ajudar!</p>
-            <a href="https://wa.me/5561999512992" class="redirect-button">Fale Conosco</a>
+            <p>Para dúvidas ou mais informações, entre em contato conosco:</p>
+            <ul>
+                <li>Email: contato@oleleh.com</li>
+                <li>Telefone: +55 61 99951-2992</li>
+            </ul>
         </div>
 
         <!-- Seção Recargas -->
         <div class="section" id="recarga">
             <h2>Recargas</h2>
-            <p>Para empresas, oferecemos um sistema de recarga prática para garantir que você tenha sempre recursos disponíveis para suas entregas.</p>
-            <a href="https://wa.me/5561999512992" class="btn-recarga">Saiba Mais sobre Recargas</a>
+            <p>Para recarregar sua conta, basta clicar no botão abaixo e seguir as instruções:</p>
+            <a href="https://www.oleleh.com/recarga" class="btn-recarga">Realizar Recarga</a>
         </div>
     </div>
 
@@ -264,18 +264,18 @@
 
     <script>
         function toggleSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.style.display = 'none'; // Oculta todas as seções
+            // Oculta todas as seções
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function (section) {
+                section.style.display = 'none';
             });
-            const selectedSection = document.getElementById(sectionId);
-            selectedSection.style.display = 'block'; // Exibe a seção selecionada
-        }
 
-        // Exibe a seção sobre como padrão ao carregar a página
-        document.addEventListener('DOMContentLoaded', function() {
-            toggleSection('sobre');
-        });
+            // Exibe a seção clicada
+            var sectionToShow = document.getElementById(sectionId);
+            if (sectionToShow) {
+                sectionToShow.style.display = 'block';
+            }
+        }
     </script>
 </body>
 
