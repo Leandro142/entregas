@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +20,12 @@
         }
 
         header {
-            background-color: black;
+            background-color: transparent;
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
+            z-index: 10;
         }
 
         h1 {
@@ -31,8 +34,13 @@
         }
 
         nav {
-            background-color: orange; /* Menu de navegação laranja */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             padding: 10px;
+            background-color: orange;
+            z-index: 20;
         }
 
         nav ul {
@@ -44,7 +52,7 @@
         }
 
         nav ul li {
-            margin: 0 20px;
+            margin: 0 15px;
         }
 
         nav ul li a {
@@ -96,8 +104,8 @@
         .redirect-button {
             text-decoration: none;
             color: white;
-            font-size: 1.5em;
-            padding: 15px 30px;
+            font-size: 1.2em;
+            padding: 10px 20px;
             background-color: green;
             border-radius: 8px;
             display: inline-block;
@@ -114,7 +122,7 @@
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
-            font-size: 1.5em;
+            font-size: 1.2em;
             border: none;
             border-radius: 8px;
             text-decoration: none;
@@ -134,6 +142,7 @@
             padding: 10px;
             font-size: 0.9em;
             margin-top: 40px;
+            text-align: center;
         }
 
         /* Responsividade */
@@ -152,17 +161,18 @@
             }
 
             .redirect-button {
-                padding: 15px 20px;
-                font-size: 1.2em;
+                padding: 10px 15px;
+                font-size: 1em;
             }
 
             .btn-recarga {
-                font-size: 1.2em;
+                font-size: 1em;
                 padding: 10px 15px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>oLeleh Entregas</h1>
@@ -201,7 +211,7 @@
         <div class="section" id="cadastro-estabelecimentos">
             <h2>Para Estabelecimentos</h2>
             <p>Com nossa plataforma, seu estabelecimento pode fornecer um serviço de entrega ágil e confiável, garantindo a satisfação dos seus clientes e a eficiência no gerenciamento logístico.</p>
-            <a href="https://www.olelehentregas.com/pagina-estabelecimentos.html" class="redirect-button">Cadastre seu Estabelecimento</a>
+            <a href="https://wa.me/5561999512992" class="redirect-button">Cadastre seu Estabelecimento</a>
         </div>
 
         <!-- Seção Cadastro de Motoboys -->
@@ -232,4 +242,5 @@
         <p>© 2024 oLeleh Entregas. Todos os direitos reservados.</p>
     </footer>
 </body>
+
 </html>
