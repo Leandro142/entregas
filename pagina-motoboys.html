@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Motoboys</title>
-    <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png"> <!-- Favicon atualizado -->
+    <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
-            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
-            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
-            color: #ffffff; /* Cor do texto ajustada para contraste */
+            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #ffffff;
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 20px;
         }
@@ -30,29 +30,29 @@
 
         .container {
             display: flex;
-            flex-direction: column; /* Coloca os itens em coluna para dispositivos móveis */
+            flex-direction: column;
             justify-content: center;
             width: 90%;
             max-width: 1200px;
             margin: 30px auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
         }
 
         .benefits, .form-container {
-            width: 100%; /* Ajusta a largura para 100% em dispositivos móveis */
-            margin-bottom: 20px; /* Adiciona margem inferior em dispositivos móveis */
+            width: 100%;
+            margin-bottom: 20px;
         }
 
         .benefits {
             text-align: left;
-            color: #000000; /* Cor preta para os textos dos benefícios */
+            color: #000000;
         }
 
         .benefits ul {
-            list-style-type: disc; /* Adiciona marcadores aos itens da lista */
+            list-style-type: disc;
             padding-left: 20px;
             font-size: 1.1em;
         }
@@ -62,7 +62,7 @@
         }
 
         .copy {
-            color: #000000; /* Cor preta para a cópia persuasiva */
+            color: #000000;
             font-size: 1.3em;
             font-weight: bold;
             margin-bottom: 20px;
@@ -74,17 +74,24 @@
         }
 
         .form-container h3 {
-            color: #000000; /* Cor preta para o texto de instrução */
+            color: #000000;
+        }
+
+        .form-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1.1em;
+            color: #000000;
         }
 
         .contact-info {
             margin-top: 20px;
             font-size: 1em;
-            color: #000000; /* Cor preta para o texto de contato */
+            color: #000000;
         }
 
         .contact-info a {
-            color: #28a745; /* Cor do link ajustada */
+            color: #28a745;
             text-decoration: none;
             font-weight: bold;
         }
@@ -94,53 +101,32 @@
         }
 
         img {
-            width: 100%; /* Logo ocupa toda a largura */
+            width: 100%;
             height: auto;
             margin-bottom: 20px;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-            color: #000000; /* Cor preta para os textos do formulário */
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-            background-color: #ffffff; /* Fundo branco para inputs para melhor contraste */
-            color: #333; /* Cor do texto dentro dos inputs */
-        }
-
-        button {
+        .download-button {
+            display: inline-block;
             background-color: #28a745;
             color: white;
             padding: 15px 30px;
-            border: none;
             border-radius: 5px;
             font-size: 1.2em;
-            cursor: pointer;
+            text-decoration: none;
             transition: background-color 0.3s;
+            margin-top: 20px;
         }
 
-        button:hover {
+        .download-button:hover {
             background-color: #71e29f;
         }
 
         footer {
             margin-top: 20px;
             font-size: 0.9em;
-            color: #ffffff; /* Cor do texto no rodapé ajustada para melhor leitura */
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o rodapé para legibilidade */
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
         }
 
@@ -156,14 +142,13 @@
             margin-right: 10px;
         }
 
-        /* Adiciona regras responsivas para diferentes tamanhos de tela */
         @media (min-width: 768px) {
             .container {
-                flex-direction: row; /* Ajusta a direção do flex para linha em telas maiores */
+                flex-direction: row;
             }
 
             .benefits, .form-container {
-                width: 48%; /* Define a largura das seções para 48% em telas maiores */
+                width: 48%;
             }
 
             .form-container {
@@ -203,48 +188,30 @@
             <ul>
                 <li>Flexibilidade de horários</li>
                 <li>Suporte ao motoboy</li>
-                <li>Ganhos por entrega realizados</li>
+                <li>Receba por cada entrega realizada, com pagamentos semanais</li>
                 <li>Plataforma simples e intuitiva</li>
             </ul>
         </div>
         <div class="form-container">
-            <h3>Preencha o formulário abaixo para se cadastrar:</h3>
-            <form action="https://formspree.io/f/xkgwlznn" method="POST">
-                <label for="name">Nome Completo:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label>Possui habilitação?</label>
-                <select name="habilitacao" required>
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                </select>
-
-                <label>Possui bag de motoboy?</label>
-                <select name="bag" required>
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                </select>
-
-                <button type="submit">Cadastrar Motoboy</button>
-            </form>
+            <h3>Quer se cadastrar? Baixe o app na Play Store e realize o cadastro diretamente no app.</h3>
+            <h3>Requisitos:</h3>
+            <ul>
+                <li>Ter moto própria</li>
+                <li>Habilitação</li>
+                <li>Bag ou baú</li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=br.com.olelehentregas.taxi.taximachine" target="_blank" class="download-button">Baixar o App</a>
 
             <div class="contact-info">
-                <p>Após o cadastro, entrarei em contato para mais informações.</p>
                 <p>Para dúvidas imediatas, entre em contato pelo WhatsApp:</p>
-                <p><a href="https://wa.me/5561999512992" target="_blank">+5561999512992</a></p>
+                <p><a href="https://wa.me/5561999512992" target="_blank">+55 61 99951-2992</a></p>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-contact">
-            <p>© 2024 oLeleh Entregas.Todos os direitos reservados.</p>
+            <p>© 2024 oLeleh Entregas. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
