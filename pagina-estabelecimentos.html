@@ -4,137 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Estabelecimentos</title>
-    <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png"> <!-- Favicon atualizado -->
-    
+    <link rel="icon" href="https://github.com/Leandro142/logo/blob/main/32x32.png?raw=true" type="image/png">
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)}; 
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '485566044241920');
+    fbq('init', '1571551030423685');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=485566044241920&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1571551030423685&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    
+
     <style>
         html, body {
             height: 100%;
             margin: 0;
         }
-
         body {
             display: flex;
             flex-direction: column;
             font-family: Arial, sans-serif;
-            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true'); /* Logo como fundo */
-            background-size: cover; /* Ajusta a logo para cobrir todo o fundo */
-            background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
-            color: #ffffff; /* Cor do texto ajustada para contraste */
+            background-image: url('https://github.com/Leandro142/logo/blob/main/Logo.png?raw=true');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #ffffff;
             text-align: center;
         }
-
         header {
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para o cabeçalho para legibilidade */
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 20px;
         }
-
         h1 {
             font-size: 2.5em;
             margin: 0;
         }
-
         .container {
-            flex: 1; /* Faz com que o container ocupe o espaço restante da tela */
+            flex: 1;
             display: flex;
-            flex-direction: column; /* Coloca os itens em coluna para dispositivos móveis */
+            flex-direction: column;
             justify-content: center;
             width: 90%;
             max-width: 1200px;
             margin: 30px auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
         }
-
         .benefits, .form-container {
-            width: 100%; /* Ajusta a largura para 100% em dispositivos móveis */
-            margin-bottom: 20px; /* Adiciona margem inferior em dispositivos móveis */
+            width: 100%;
+            margin-bottom: 20px;
         }
-
         .benefits {
             text-align: left;
-            color: #000000; /* Cor preta para os textos dos benefícios */
+            color: #000000;
         }
-
         .benefits ul {
-            list-style-type: disc; /* Adiciona marcadores aos itens da lista */
+            list-style-type: disc;
             padding-left: 20px;
             font-size: 1.1em;
         }
-
         .benefits li {
             margin-bottom: 10px;
         }
-
         .copy {
-            color: #000000; /* Cor preta para a cópia persuasiva */
+            color: #000000;
             font-size: 1.3em;
             font-weight: bold;
             margin-bottom: 20px;
             text-align: left;
         }
-
         .form-container {
             text-align: left;
         }
-
         .form-container h3 {
-            color: #000000; /* Cor preta para o texto de instrução */
+            color: #000000;
         }
-
         .contact-info {
             margin-top: 20px;
             font-size: 1em;
-            color: #000000; /* Cor preta para o texto de contato */
+            color: #000000;
         }
-
         .contact-info a {
-            color: #28a745; /* Cor do link ajustada */
+            color: #28a745;
             text-decoration: none;
             font-weight: bold;
         }
-
         .contact-info a:hover {
             text-decoration: underline;
         }
-
         img {
-            width: 100%; /* Logo ocupa toda a largura */
+            width: 100%;
             height: auto;
             margin-bottom: 20px;
         }
-
         form {
             display: flex;
             flex-direction: column;
         }
-
         label {
             margin-bottom: 10px;
             font-size: 1.1em;
-            color: #000000; /* Cor preta para os textos do formulário */
+            color: #000000;
         }
-
         input, textarea, select {
             width: 100%;
             padding: 10px;
@@ -142,10 +124,9 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 1em;
-            background-color: #ffffff; /* Fundo branco para inputs para melhor contraste */
-            color: #333; /* Cor do texto dentro dos inputs */
+            background-color: #ffffff;
+            color: #333;
         }
-
         button {
             background-color: #28a745;
             color: white;
@@ -156,41 +137,33 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         button:hover {
             background-color: #71e29f;
         }
-
         footer {
             background-color: rgba(0, 0, 0, 0.7);
             color: #ffffff;
             padding: 10px;
             text-align: center;
-            margin-top: auto; /* Faz o rodapé ficar no final */
+            margin-top: auto;
         }
-
         .footer-contact {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
         .footer-contact img {
             width: 24px;
             height: 24px;
             margin-right: 10px;
         }
-
-        /* Adiciona regras responsivas para diferentes tamanhos de tela */
         @media (min-width: 768px) {
             .container {
-                flex-direction: row; /* Ajusta a direção do flex para linha em telas maiores */
+                flex-direction: row;
             }
-
             .benefits, .form-container {
-                width: 48%; /* Define a largura das seções para 48% em telas maiores */
+                width: 48%;
             }
-
             .form-container {
                 margin-left: 2%;
             }
@@ -201,7 +174,6 @@
     <header>
         <h1>Cadastro de Estabelecimentos</h1>
     </header>
-
     <div class="container">
         <div class="benefits">
             <div class="copy">
@@ -241,10 +213,9 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="footer-contact">
-            <p>© 2024 oLeleh Entregas.Todos os direitos reservados.</p>
+            <p>© 2024 oLeleh Entregas. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
